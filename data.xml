@@ -1,76 +1,91 @@
 <?xml version="1.0"?>
 <root>
 	<people>
-		<item name="Guang Yang" link="http://itcs.tsinghua.edu.cn/guangyang/" />
-		<item name="Bangsheng Tang" link="http://itcs.tsinghua.edu.cn/bangshengtang/" />
-		<item name="Shiteng Chen" link="http://itcs.tsinghua.edu.cn/shitengchen/" />
+		<person>
+			<name> Guang Yang </name>
+			<role> phd </role>
+			<url> http://itcs.tsinghua.edu.cn/guangyang/ </url>
+			<interest> Cryptography, Derandomization </interest>
+			<details>
+				<![CDATA[blah blah this may include HTML links and tags such that <B> mmmfd </B> and <I> fksdfsdfsd </I> etc]]>
+			</details>
+			<!-- Resolve html tags in xml using 'CDATA' -->
+		</person>
+		<person>
+			<name> Bangsheng Tang </name>
+			<role> phd </role>
+			<url> http://itcs.tsinghua.edu.cn/bangshengtang/ </url>
+			<interest> Gaming </interest>
+			<details>
+				<![CDATA[blah blah this may include HTML links and tags such that <B> mmmfd </B> and <I> fksdfsdfsd </I> etc]]>
+			</details>
+		</person>		
+		<person>
+			<name> Shiteng Chen </name>
+			<role> phd </role>
+			<url> http://itcs.tsinghua.edu.cn/shitengchen/ </url>
+			<interest> Joking </interest>
+			<details>
+				<![CDATA[blah blah this may include HTML links and tags such that <B> mmmfd </B> and <I> fksdfsdfsd </I> etc]]>
+			</details>
+		</person>
 	</people>
 	<announce>
-		<item
-			title="Annual Privacy Forum"
-			time="Summer 2012"
-			detail="PC member "
-			link="http://privacyforum.eu/" />
+		<item>
+			<title> Congratulations to Guang Yang for winning the new scientist Tsinghua award! </title>
+			<date> January 1, 2013 </date>
+			<!-- I prefer to display dates like that, you can store it any way you want but display it as that -->
+			<details>
+				<![CDATA[blah blah this may include HTML links and tags such that <B> mmmfd </B> and <I> fksdfsdfsd </I> etc]]>
+			</details>
+		</item>
 	</announce>
-	<project>
-		<item
-			title="Halloween Project" />
-	</project>
 	<seminar>
-		<item
-			title="Representations, Algorithms and Computation on Groups"
-			type="undergraduate"
-			link="http://itcs.tsinghua.edu.cn/~papakons/teaching/advalgorithmsF12/"
-			time="Fall 2012"
-			extra=""/>
-		<item
-			title="Derandomization and Randomness in Computation"
-			type="graduate"
-			link="http://itcs.tsinghua.edu.cn/~papakons/teaching/derandomizationS12/"
-			time="Spring 2012"
-			extra="co-taught with Jian Li"/>
-		<item
-			title="Advanced Algorithms"
-			type="undergraduate"
-			link="http://itcs.tsinghua.edu.cn/~papakons/teaching/advalgorithmsF11/"
-			time="Fall 2011"
-			extra=""/>
+		<item>
+			<title> Representations etc </title>
+			<date> January 1, 2013 </date>
+			<!-- when this is displayed it should add the DAY as well e.g. "Tuesday January 1, 2013" -->
+		
+			<time> 12pm </time>
+			<venue> 1-222 FIT Building </venue>
+			<abstract> blah blah </abstract>
+			<extra> blah blah </extra> 
+		
+			<!-- THESE ARE JUST POSSIBLE ADDITIONAL REMARKS, IF MISSING THEN DISPLAY NOTHING -->
+			<url> http://some_link_related_to_this_seminar </url>
+			<url> http://some_other_link_related_to_this_seminar </url>
+		</item>
 	</seminar>
+	<project>
+		<item>
+			<title> Halloween </title>
+			<author>
+				<name> Guang Yang </name>
+				<url> http://... </url>
+			</author>
+		</item>
+	</project>
 	<paper>
-		<section title="Section A">
-			<item
-				title="Width-parameterized SAT: time-space tradeoffs"
-				source="ECCC"
-				time="2012"
-				details=""
-				link="http://eccc.hpi-web.de/report/2012/027/">
-				<author name="Eric Allender" link=""/>
-				<author name="Shiteng Chen" link=""/>
-				<author name="Tiancheng Lou" link=""/>
-				<author name="Periklis A. Papakonstantinou" link=""/>
-				<author name="Bangsheng Tang" link=""/>
-			</item>
-		</section>
-		<section title="Section B">
-			<item
-				title="A remark on one-wayness vs pseudorandomness"
-				source="ECCC"
-				time="2012"
-				details=""
-				link="http://eccc.hpi-web.de/report/2012/005/">
-				<author name="Periklis A. Papakonstantinou" link=""/>
-				<author name="Guang Yang" link=""/>
-			</item>
-			<item
-				title="Polynomial time with restricted use of randomness"
-				source="ECCC"
-				time="2012"
-				details=""
-				link="http://eccc.hpi-web.de/report/2009/039/">
-				<author name="Matei David" link="http://www.cs.toronto.edu/~matei/"/>
-				<author name="Periklis A. Papakonstantino" link=""/>
-				<author name="Anastasios Sidiropoulos" link="http://www.mit.edu/~tasos/"/>
-			</item>
-		</section>
-	</paper>
+		<item>
+			<category> Derandomization </category>
+			<title> blah blah </title>
+			<author>
+				<name> Eric Allender </name>
+				<url> http://... </url>
+			</author>
+			<!-- IF URL IS MISSING DO NOT MAKE ANY LINK AVALIABLE -->
+			<author>
+				<name> Shiteng Chen </name>
+				<url> http://... </url>
+			</author>
+			<date> January 1, 2013 </date>
+			<venue> Conference or Journal name </venue>
+			<paperURL> http://... </paperURL>
+			<!-- it can be the case that the URLs are missing, in this case display nothing -->
+		
+			<fullpaperURL> http://... </fullpaperURL>
+			<abstract> blah blah </abstract>
+			<BIB> BIB ENTRY HERE, this is like the Latex bib entries as they appear on my academic webpage </BIB>
+		</item>
+	</paper>	
 </root>

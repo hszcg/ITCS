@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<root>
+	<people>
+		<item name="Guang Yang" link="http://itcs.tsinghua.edu.cn/guangyang/" />
+		<item name="Bangsheng Tang" link="http://itcs.tsinghua.edu.cn/bangshengtang/" />
+		<item name="Shiteng Chen" link="http://itcs.tsinghua.edu.cn/shitengchen/" />
+	</people>
+	<announce>
+		<item
+			title="Annual Privacy Forum"
+			time="Summer 2012"
+			detail="PC member "
+			link="http://privacyforum.eu/" />
+	</announce>
+	<project>
+		<item
+			title="Halloween Project" />
+	</project>
+	<seminar>
+		<item
+			title="Representations, Algorithms and Computation on Groups"
+			type="undergraduate"
+			link="http://itcs.tsinghua.edu.cn/~papakons/teaching/advalgorithmsF12/"
+			time="Fall 2012"
+			extra=""/>
+		<item
+			title="Derandomization and Randomness in Computation"
+			type="graduate"
+			link="http://itcs.tsinghua.edu.cn/~papakons/teaching/derandomizationS12/"
+			time="Spring 2012"
+			extra="co-taught with Jian Li"/>
+		<item
+			title="Advanced Algorithms"
+			type="undergraduate"
+			link="http://itcs.tsinghua.edu.cn/~papakons/teaching/advalgorithmsF11/"
+			time="Fall 2011"
+			extra=""/>
+	</seminar>
+	<paper>
+		<section title="Section A">
+			<item
+				title="Width-parameterized SAT: time-space tradeoffs"
+				source="ECCC"
+				time="2012"
+				details=""
+				link="http://eccc.hpi-web.de/report/2012/027/">
+				<author name="Eric Allender" link=""/>
+				<author name="Shiteng Chen" link=""/>
+				<author name="Tiancheng Lou" link=""/>
+				<author name="Periklis A. Papakonstantinou" link=""/>
+				<author name="Bangsheng Tang" link=""/>
+			</item>
+		</section>
+		<section title="Section B">
+			<item
+				title="A remark on one-wayness vs pseudorandomness"
+				source="ECCC"
+				time="2012"
+				details=""
+				link="http://eccc.hpi-web.de/report/2012/005/">
+				<author name="Periklis A. Papakonstantinou" link=""/>
+				<author name="Guang Yang" link=""/>
+			</item>
+			<item
+				title="Polynomial time with restricted use of randomness"
+				source="ECCC"
+				time="2012"
+				details=""
+				link="http://eccc.hpi-web.de/report/2009/039/">
+				<author name="Matei David" link="http://www.cs.toronto.edu/~matei/"/>
+				<author name="Periklis A. Papakonstantino" link=""/>
+				<author name="Anastasios Sidiropoulos" link="http://www.mit.edu/~tasos/"/>
+			</item>
+		</section>
+	</paper>
+</root>
