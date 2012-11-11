@@ -186,12 +186,12 @@ ol li {
 /*****************END MISC ************************/
 
 #left {
-	width: 33%;
+	width: 20%;
 	position: fixed;
 }
 
 #right {
-	width: 67%;
+	width: 80%;
 	background-color: #f7f7f7;
 	float: right;
 }
@@ -243,13 +243,13 @@ ol li {
 
 
 #content {
-	width: 610px;
+	width: 700px;
 	padding: 0 20px;
 }
 
 .page {
 	margin-bottom: 300px;
-	width: 610px;
+	width: 700px;
 	padding: 30px  10px 30px 30px;
 }
 
@@ -298,7 +298,7 @@ ol li {
 }
 
 .page-content {
-	width: 610px;
+	width: 700px;
 	padding: 30px  10px 30px 30px;
 }
 
@@ -355,7 +355,7 @@ ul#navigation li a.active {
 }
 
 #slider-cycle {
-	width: 610px;
+	width: 700px;
 	height: 263px;
 	overflow: hidden;
 }
@@ -383,7 +383,7 @@ ul#navigation li a.active {
 }
 
 #slider-cycle li { 
-	width: 610px;
+	width: 700px;
 	height: 263px;
 	overflow: hidden; 
 	display: block;
@@ -437,13 +437,13 @@ ul#navigation li a.active {
 =======================================================*/
 
 #slider {
-	width: 610px;
+	width: 700px;
 	height: 224px;
 	overflow: hidden;
 }
 
 #slider li { 
-	width: 610px;
+	width: 700px;
 	height: 224px;
 	overflow: hidden; 
 	display: block;
@@ -537,7 +537,7 @@ ul#navigation li a.active {
 /*====BOXES
 =======================================================*/
 .boxes {
-	width: 610px;
+	width: 700px;
 }
 
 .boxes img {
@@ -908,7 +908,7 @@ ul.portfolio-thumbs li .zoom-btn:hover, ul.portfolio-thumbs li .play-btn:hover {
 }
 
 .post-metadata p {
-	font-size: 11px;
+	font-size: 14px;
 	padding-bottom: 0px;
 	
 }
