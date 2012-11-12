@@ -574,14 +574,14 @@ p {
 =======================================================*/
 .one-third {
 	float: left;
-	width: 190px;
+	width: 210px;
 	margin-right: 20px;
 	margin-bottom: 15px;
 }
 
 .two-third {
 	float: left;
-	width: 400px;
+	width: 420px;
 	margin-right: 20px;
 	margin-bottom: 15px;
 }
@@ -590,7 +590,7 @@ p {
 	float: left;
 	margin-right: 20px;
 	margin-bottom: 15px;
-	width: 295px;
+	width: 325px;
 }
 
 .full-width {
@@ -649,13 +649,13 @@ ul.tweet_list li {
 
 .left {
 	float: left;
-	width: 255px;
+	width: 295px;
 	margin-right: 20px;
 }
 
 .right {
 	float: right;
-	width: 255px;
+	width: 295px;
 	margin-left: 20px;
 }
 
@@ -771,8 +771,8 @@ ol li {
 
 
 #portfolio-content {
-	width: 630px;
-	height: 630px;
+	width: 700px;
+	height: 700px;
 	overflow: hidden;
 	position: relative;
 }
@@ -967,7 +967,7 @@ ul.portfolio-thumbs li .zoom-btn:hover, ul.portfolio-thumbs li .play-btn:hover {
 
 .comment-text {
 	float: left;
-	width: 493px;
+	width: 543px;
 	background: #f7f7f7;
 	padding: 15px;
 	border: 1px solid #e1e1e1;
