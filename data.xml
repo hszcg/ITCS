@@ -29,6 +29,15 @@
 				<![CDATA[blah blah this may include HTML links and tags such that <B> mmmfd </B> and <I> fksdfsdfsd </I> etc]]>
 			</details>
 		</person>
+		<prev_person>
+			<name> James Hu </name>
+			<role> phd </role>
+			<url> http://itcs.tsinghua.edu.cn/shitengchen/ </url>
+			<text> Whatever </text>
+			<details>
+				<![CDATA[blah blah this may include HTML links and tags such that <B> mmmfd </B> and <I> fksdfsdfsd </I> etc]]>
+			</details>
+		</prev_person>
 	</people>
 	<announce>
 		<item>
@@ -38,18 +47,42 @@
 			<details>
 				<![CDATA[blah blah this may include HTML links and tags such that <B> mmmfd </B> and <I> fksdfsdfsd </I> etc]]>
 			</details>
+			<importance> 1 </importance>
+		</item>
+		<item>
+			<title> Congratulations to Guang Yang for winning the new scientist Tsinghua award! </title>
+			<date> January 23, 2013 </date>
+			<!-- I prefer to display dates like that, you can store it any way you want but display it as that -->
+			<details>
+				<![CDATA[blah blah this may include HTML links and tags such that <B> mmmfd </B> and <I> fksdfsdfsd </I> etc]]>
+			</details>
+			<importance> 0 </importance>
 		</item>
 	</announce>
 	<seminar>
 		<item>
 			<title> Representations etc </title>
-			<date> January 1, 2013 </date>
+			<date> Tuesday, January 1, 2013 </date>
 			<!-- when this is displayed it should add the DAY as well e.g. "Tuesday January 1, 2013" -->
 		
 			<time> 12pm </time>
 			<venue> 1-222 FIT Building </venue>
 			<abstract> blah blah </abstract>
-			<extra> blah blah </extra> 
+			<details> blah blah </details> 
+		
+			<!-- THESE ARE JUST POSSIBLE ADDITIONAL REMARKS, IF MISSING THEN DISPLAY NOTHING -->
+			<url> http://some_link_related_to_this_seminar </url>
+			<url> http://some_other_link_related_to_this_seminar </url>
+		</item>
+		<item>
+			<title> Representations etc </title>
+			<date> Tuesday, January 1, 2013 </date>
+			<!-- when this is displayed it should add the DAY as well e.g. "Tuesday January 1, 2013" -->
+		
+			<time> 12pm </time>
+			<venue> 1-222 FIT Building </venue>
+			<abstract> blah blah </abstract>
+			<details> blah blah </details> 
 		
 			<!-- THESE ARE JUST POSSIBLE ADDITIONAL REMARKS, IF MISSING THEN DISPLAY NOTHING -->
 			<url> http://some_link_related_to_this_seminar </url>
@@ -63,6 +96,17 @@
 				<name> Guang Yang </name>
 				<url> http://... </url>
 			</author>
+			<abstract> blah blah </abstract>
+			<details> blah blah </details> 
+		</item>
+		<item>
+			<title> New Year </title>
+			<author>
+				<name> Guang Yang </name>
+				<url> http://... </url>
+			</author>
+			<abstract> blah blah </abstract>
+			<details> blah blah </details> 
 		</item>
 	</project>
 	<paper>
@@ -87,5 +131,21 @@
 			<abstract> blah blah </abstract>
 			<BIB> BIB ENTRY HERE, this is like the Latex bib entries as they appear on my academic webpage </BIB>
 		</item>
-	</paper>	
+	</paper>
+	<video>
+		<item>
+			<title> blah blah </title>
+			<date> January 1, 2013 </date>
+			<url> http://... </url>
+			<desc> blah blah </desc>
+		</item>
+	</video>
+	<slides>
+		<item>
+			<title> blah blah </title>
+			<date> January 1, 2013 </date>
+			<url> http://... </url>
+			<desc> blah blah </desc>
+		</item>
+	</slides>
 </root>
