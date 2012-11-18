@@ -84,28 +84,38 @@ class MainWin(QtGui.QWidget):
     self.listDetail.setSpacing(10)
     topLayout.addLayout(self.listDetail, 0, 3, 1, 1)
 
-    addButton = QtGui.QPushButton("Add")
-    # editButton = QtGui.QPushButton("Edit")
-    delButton = QtGui.QPushButton("Delete")
-
-    addButton.clicked.connect(self._slotAddClicked)
-    # self.connect(editbutton, SIGNAL("clicked()"), self._slotEditClicked)
-    delButton.clicked.connect(self._slotDelClicked)
-
     saveFileButton = QtGui.QPushButton("Save All")
     saveFileButton.clicked.connect(self._slotSaveFileClicked)
     topLayout.addWidget(saveFileButton, 1, 0, 1, 1)
 
+    addButton = QtGui.QPushButton("Add")
+    delButton = QtGui.QPushButton("Delete")
+    addButton.clicked.connect(self._slotAddClicked)
+    delButton.clicked.connect(self._slotDelClicked)
+
     hbox = QtGui.QHBoxLayout()
     hbox.addWidget(addButton)
-    #hbox.addWidget(editButton)
     hbox.addWidget(delButton)
     hbox.addStretch(1)
     topLayout.addLayout(hbox, 1, 2, 1, 1)
     
+    upButton = QtGui.QPushButton("Up")
+    downButton = QtGui.QPushButton("Down")
+    topButton = QtGui.QPushButton("Top")
+    bottomButton = QtGui.QPushButton("Bottom")
+    upButton.clicked.connect(self._slotUpClicked)
+    downButton.clicked.connect(self._slotDownClicked)
+    topButton.clicked.connect(self._slotTopClicked)
+    bottomButton.clicked.connect(self._slotBottomClicked)
+    
     saveButton = QtGui.QPushButton("Save Item")
     saveButton.clicked.connect(self._slotSaveClicked)
+    
     sbox = QtGui.QHBoxLayout()
+    sbox.addWidget(upButton)
+    sbox.addWidget(downButton)
+    sbox.addWidget(topButton)
+    sbox.addWidget(bottomButton)
     sbox.addStretch(1)
     sbox.addWidget(saveButton)
     topLayout.addLayout(sbox, 1, 3, 1, 1)
@@ -176,12 +186,14 @@ class MainWin(QtGui.QWidget):
 
 
   def _slotAddClicked(self):
-    lvi = QtGui.QListWidgetItem('NEW %s' % self.listC.count())
-    self.listC.insertItem(0, lvi)
-    data = {}
+    item = {}
     for t in self.template:
-      data[t] = ''
-    self.dataArr[self.keyA][self.keyB].insert(0, data)
+      item[t] = ''
+    self.dataArr[self.keyA][self.keyB].insert(0, item)
+    
+    text = '%s: %s' % (self.template[0], item[self.template[0]])
+    lvi = QtGui.QListWidgetItem(text)
+    self.listC.insertItem(0, lvi)
     
     self.listC.setCurrentRow(0)
     if self.listC.count() > 0:
@@ -192,6 +204,45 @@ class MainWin(QtGui.QWidget):
     index = self.listC.currentRow()
     self.listC.takeItem(index)
     del self.dataArr[self.keyA][self.keyB][index]
+
+
+  def _slotUpClicked(self):
+    index = self.listC.currentRow()
+    self.moveCurrentItem(index - 1)
+
+
+  def _slotDownClicked(self):
+    index = self.listC.currentRow()
+    self.moveCurrentItem(index + 1)
+
+
+  def _slotTopClicked(self):
+    self.moveCurrentItem(0)
+
+
+  def _slotBottomClicked(self):
+    index = self.listC.count()
+    self.moveCurrentItem(index - 1)
+
+
+  def moveCurrentItem(self, tarIndex):
+    if tarIndex < 0 or tarIndex >= self.listC.count():
+      return
+    index = self.listC.currentRow()
+    if index < 0 or index == tarIndex:
+      return 
+    item = self.dataArr[self.keyA][self.keyB][index]
+    del self.dataArr[self.keyA][self.keyB][index]
+    self.listC.takeItem(index)
+    self.dataArr[self.keyA][self.keyB].insert(tarIndex, item)
+    text = '%s: %s' % (self.template[0], item[self.template[0]])
+    lvi = QtGui.QListWidgetItem(text)
+    self.listC.insertItem(tarIndex, lvi)
+    
+    self.clearPage()
+    self.listC.setCurrentRow(tarIndex)
+    self._itemCClicked(self.listC.item(tarIndex))
+
 
   def _slotSaveFileClicked(self):
     self.saveData()
