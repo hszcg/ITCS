@@ -8,74 +8,74 @@ import json
 structArr = {
     'people': {
       'member': [
-        {'name': 'Guang Yang'},
-        {'role': 'phd OR faculty'},
-        {'homepage': 'http://itcs.tsinghua.edu.cn/guangyang/'},
-        {'interest': 'Cryptography, Derandomization'},
-        {'details': 'blah blah this may include HTML links and tags'},
-        {'photo': 'image/guangyang.jpg'},
+        {'id':'name', 'tip':'Guang Yang'},
+        {'id':'role', 'tip':'phd OR faculty'},
+        {'id':'homepage', 'tip':'http://itcs.tsinghua.edu.cn/guangyang/'},
+        {'id':'interest', 'tip':'Cryptography, Derandomization'},
+        {'id':'details', 'tip':'blah blah this may include HTML links and tags'},
+        {'id':'photo', 'tip':'image/guangyang.jpg'},
         ],
       'former_member': [
-        {'name': 'Wei Yu'},
-        {'role': 'phd OR faculty'},
-        {'current_affiliation': 'CTIC, Aarhus University'},
-        {'current_homepage': 'http://pure.au.dk/portal/en/persons/id(f644ac9a-1af0-4ebc-863c-d9e909fbae5f).html'},
-        {'interest': 'Joking'},
-        {'details': 'blah blah this may include HTML links and tags'},
-        {'photo': 'image/weiyu.jpg'},
+        {'id':'name', 'tip':'Wei Yu'},
+        {'id':'role', 'tip':'phd OR faculty'},
+        {'id':'current_affiliation', 'tip':'CTIC, Aarhus University'},
+        {'id':'current_homepage', 'tip':'http://pure.au.dk/portal/en/persons/id(f644ac9a-1af0-4ebc-863c-d9e909fbae5f).html'},
+        {'id':'interest', 'tip':'Joking'},
+        {'id':'details', 'tip':'blah blah this may include HTML links and tags'},
+        {'id':'photo', 'tip':'image/weiyu.jpg'},
         ],
       },
     'announcements': {
       'announcement': [
-        {'title': },
-        {'date': },
-        {'details': },
-        {'importance': },
+        {'id':'title', 'tip':'Congratulations to Guang Yang for winning the new scientist Tsinghua award!'},
+        {'id':'date', 'tip':'January 1, 2013'},
+        {'id':'details', 'tip':'blah blah this may include HTML links and tags'},
+        {'id':'importance', 'tip':'1~9'},
         ],
       },
     'seminars': {
       'seminar': [
-        {'title': },
-        {'date': },
-        {'time': },
-        {'venue': },
-        {'abstract': },
-        {'extra': },
-        {'urls': },
-        {'speaker': },
-        {'speaker_homepage': },
-        {'speaker_bio': },
+        {'id':'title', 'tip':'Representations etc'},
+        {'id':'date', 'tip':'Tuesday January 1, 2013' },
+        {'id':'time', 'tip':'12pm'},
+        {'id':'venue', 'tip':'1-222 FIT Building'},
+        {'id':'abstract', 'tip':'blabla'},
+        {'id':'extra', 'tip':'blabla'},
+        {'id':'urls', 'tip':'http://link1.com,http://link2.com'},
+        {'id':'speaker', 'tip':'Bangsheng Tang'},
+        {'id':'speaker_homepage', 'tip':'http://link.com'},
+        {'id':'speaker_bio', 'tip':'blabla'},
         ],
       },
     'projects': {
       'project': [
-        {'title': },
-        {'details_html': },
+        {'id':'title', 'tip':'Halloween'},
+        {'id':'details_html', 'tip':'blah blah this may include HTML links and tags'},
         ],
       },
     'papers': {
       'paper': [
-        {'category': },
-        {'title': },
-        {'author': },
-        {'date': },
-        {'venue': },
-        {'paper_url': },
-        {'fullpaper_url': },
-        {'abstract': },
-        {'bibtex': },
+        {'id':'category', 'tip':'Derandomization'},
+        {'id':'title', 'tip':'blabla'},
+        {'id':'author', 'tip':'Eric Allende[http://link1.com],Shiteng Chen[http://link2.com]'},
+        {'id':'date', 'tip':'January 1, 2013'},
+        {'id':'venue', 'tip':'Conference or Journal name'},
+        {'id':'paper_url', 'tip':'http://link.com'},
+        {'id':'fullpaper_url', 'tip':'http://link.com'},
+        {'id':'abstract', 'tip':'blabla'},
+        {'id':'bibtex', 'tip':'blabla'},
         ],
       'video': [
-        {'title': },
-        {'date': },
-        {'url': },
-        {'description': },
+        {'id':'title', 'tip':'blabla'},
+        {'id':'date', 'tip':'January 1, 2013'},
+        {'id':'url', 'tip':'http://link.com'},
+        {'id':'description', 'tip':'blabla'},
         ],
       'slide_files': [
-        {'title': },
-        {'date': },
-        {'url': },
-        {'description': },
+        {'id':'title', 'tip':'blabla'},
+        {'id':'date', 'tip':'January 1, 2013'},
+        {'id':'url', 'tip':'http://link.com'},
+        {'id':'description', 'tip':'blabla'},
         ],
       },
     }
@@ -196,13 +196,13 @@ class MainWin(QtGui.QWidget):
     self.clearPage()
     index = 0
     for t in self.template:
-      labelItem = QtGui.QLabel(t)
-      self.listDetail.addWidget(QtGui.QLabel(t), index, 0)
+      labelItem = QtGui.QLabel(t['id'])
+      self.listDetail.addWidget(labelItem, index, 0)
       text = ''
-      if t in data.keys():
-        text = data[t]
+      if t['id'] in data.keys():
+        text = data[t['id']]
       textItem = QtGui.QTextEdit(text)
-      textItem.setToolTip("<font size='10'>%s</font>" % t)
+      textItem.setToolTip("<font size='10'>%s</font>" % t['tip'])
       self.dataList.append(textItem)
       self.listDetail.addWidget(textItem, index, 1)
       index += 1
@@ -227,7 +227,7 @@ class MainWin(QtGui.QWidget):
     self.keyB = str(item.text())
     self.template = self.subStruct[self.keyB]
     for t in self.dataArr[self.keyA][self.keyB]:
-      text = '%s: %s' % (self.template[0], t[self.template[0]])
+      text = '%s: %s' % (self.template[0]['id'], t[self.template[0]['id']])
       self.listC.addItem(text)
 
     self.clearPage()
@@ -244,10 +244,10 @@ class MainWin(QtGui.QWidget):
   def _slotAddClicked(self):
     item = {}
     for t in self.template:
-      item[t] = ''
+      item[t['id']] = ''
     self.dataArr[self.keyA][self.keyB].insert(0, item)
     
-    text = '%s: %s' % (self.template[0], item[self.template[0]])
+    text = '%s: %s' % (self.template[0]['id'], item[self.template[0]['id']])
     lvi = QtGui.QListWidgetItem(text)
     self.listC.insertItem(0, lvi)
     
@@ -291,7 +291,7 @@ class MainWin(QtGui.QWidget):
     del self.dataArr[self.keyA][self.keyB][index]
     self.listC.takeItem(index)
     self.dataArr[self.keyA][self.keyB].insert(tarIndex, item)
-    text = '%s: %s' % (self.template[0], item[self.template[0]])
+    text = '%s: %s' % (self.template[0]['id'], item[self.template[0]['id']])
     lvi = QtGui.QListWidgetItem(text)
     self.listC.insertItem(tarIndex, lvi)
     
@@ -314,7 +314,7 @@ class MainWin(QtGui.QWidget):
     for t in self.template:
       textItem = self.dataList[index]
       text = str(textItem.toPlainText())
-      data[t] = text
+      data[t['id']] = text
       index += 1
 
     index = self.listC.currentRow()
