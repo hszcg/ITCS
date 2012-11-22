@@ -7,23 +7,76 @@ import json
 
 structArr = {
     'people': {
-      'member': ['name', 'role', 'homepage', 'interest', 'details'],
-      'former_member': ['name', 'role', 'current_affiliation', 'current_homepage', 'interest', 'details'],
-      'colleague': ['name', 'homepage'],
+      'member': [
+        {'name': 'Guang Yang'},
+        {'role': 'phd OR faculty'},
+        {'homepage': 'http://itcs.tsinghua.edu.cn/guangyang/'},
+        {'interest': 'Cryptography, Derandomization'},
+        {'details': 'blah blah this may include HTML links and tags'},
+        {'photo': 'image/guangyang.jpg'},
+        ],
+      'former_member': [
+        {'name': 'Wei Yu'},
+        {'role': 'phd OR faculty'},
+        {'current_affiliation': 'CTIC, Aarhus University'},
+        {'current_homepage': 'http://pure.au.dk/portal/en/persons/id(f644ac9a-1af0-4ebc-863c-d9e909fbae5f).html'},
+        {'interest': 'Joking'},
+        {'details': 'blah blah this may include HTML links and tags'},
+        {'photo': 'image/weiyu.jpg'},
+        ],
       },
     'announcements': {
-      'announcement': ['title', 'date', 'details', 'importance'],
+      'announcement': [
+        {'title': },
+        {'date': },
+        {'details': },
+        {'importance': },
+        ],
       },
     'seminars': {
-      'seminar': ['title', 'date', 'time', 'venue', 'abstract', 'extra', 'urls'],
+      'seminar': [
+        {'title': },
+        {'date': },
+        {'time': },
+        {'venue': },
+        {'abstract': },
+        {'extra': },
+        {'urls': },
+        {'speaker': },
+        {'speaker_homepage': },
+        {'speaker_bio': },
+        ],
       },
     'projects': {
-      'project': ['title', 'author', 'abstract', 'details'],
+      'project': [
+        {'title': },
+        {'details_html': },
+        ],
       },
     'papers': {
-      'paper': ['category', 'title', 'author', 'date', 'venue', 'paper_url', 'fullpaper_url', 'abstract', 'bibtex'],
-      'video': ['title', 'date', 'url', 'description'],
-      'slide_files': ['title', 'date', 'url', 'description'],
+      'paper': [
+        {'category': },
+        {'title': },
+        {'author': },
+        {'date': },
+        {'venue': },
+        {'paper_url': },
+        {'fullpaper_url': },
+        {'abstract': },
+        {'bibtex': },
+        ],
+      'video': [
+        {'title': },
+        {'date': },
+        {'url': },
+        {'description': },
+        ],
+      'slide_files': [
+        {'title': },
+        {'date': },
+        {'url': },
+        {'description': },
+        ],
       },
     }
 
@@ -126,6 +179,7 @@ class MainWin(QtGui.QWidget):
     topLayout.setColumnMinimumWidth(3, 400)
     topLayout.setColumnStretch(3, 100)
     topLayout.setRowMinimumHeight(0, 200)
+    
     self.setLayout(topLayout)
     self.setGeometry(200, 150, 640, 480)
     self.setWindowTitle('Content Editor')
@@ -142,11 +196,13 @@ class MainWin(QtGui.QWidget):
     self.clearPage()
     index = 0
     for t in self.template:
+      labelItem = QtGui.QLabel(t)
       self.listDetail.addWidget(QtGui.QLabel(t), index, 0)
       text = ''
       if t in data.keys():
         text = data[t]
       textItem = QtGui.QTextEdit(text)
+      textItem.setToolTip("<font size='10'>%s</font>" % t)
       self.dataList.append(textItem)
       self.listDetail.addWidget(textItem, index, 1)
       index += 1
