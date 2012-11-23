@@ -8,74 +8,74 @@ import json
 structArr = {
     'people': {
       'member': [
-        {'id':'name', 'tip':'Guang Yang'},
-        {'id':'role', 'tip':'phd OR faculty'},
-        {'id':'homepage', 'tip':'http://itcs.tsinghua.edu.cn/guangyang/'},
-        {'id':'interest', 'tip':'Cryptography, Derandomization'},
-        {'id':'details', 'tip':'blah blah this may include HTML links and tags'},
-        {'id':'photo', 'tip':'image/guangyang.jpg'},
+        {'id':'name', 'tip':'Guang Yang', 'size': 1},
+        {'id':'role', 'tip':'phd OR faculty', 'size': 1},
+        {'id':'homepage', 'tip':'http://itcs.tsinghua.edu.cn/guangyang/', 'size': 2},
+        {'id':'interest', 'tip':'Cryptography, Derandomization', 'size': 1},
+        {'id':'details', 'tip':'blah blah this may include HTML links and tags', 'size': 8},
+        {'id':'photo', 'tip':'image/guangyang.jpg', 'size': 1},
         ],
       'former_member': [
-        {'id':'name', 'tip':'Wei Yu'},
-        {'id':'role', 'tip':'phd OR faculty'},
-        {'id':'current_affiliation', 'tip':'CTIC, Aarhus University'},
-        {'id':'current_homepage', 'tip':'http://pure.au.dk/portal/en/persons/id(f644ac9a-1af0-4ebc-863c-d9e909fbae5f).html'},
-        {'id':'interest', 'tip':'Joking'},
-        {'id':'details', 'tip':'blah blah this may include HTML links and tags'},
-        {'id':'photo', 'tip':'image/weiyu.jpg'},
+        {'id':'name', 'tip':'Wei Yu', 'size': 1},
+        {'id':'role', 'tip':'phd OR faculty', 'size': 1},
+        {'id':'current_affiliation', 'tip':'CTIC, Aarhus University', 'size': 1},
+        {'id':'current_homepage', 'tip':'http://pure.au.dk/portal/en/persons/id(f644ac9a-1af0-4ebc-863c-d9e909fbae5f).html', 'size': 2},
+        {'id':'interest', 'tip':'Joking', 'size': 1},
+        {'id':'details', 'tip':'blah blah this may include HTML links and tags', 'size': 8},
+        {'id':'photo', 'tip':'image/weiyu.jpg', 'size': 1},
         ],
       },
     'announcements': {
       'announcement': [
-        {'id':'title', 'tip':'Congratulations to Guang Yang for winning the new scientist Tsinghua award!'},
-        {'id':'date', 'tip':'January 1, 2013'},
-        {'id':'details', 'tip':'blah blah this may include HTML links and tags'},
-        {'id':'importance', 'tip':'1~9'},
+        {'id':'title', 'tip':'Congratulations to Guang Yang for winning the new scientist Tsinghua award!', 'size': 3},
+        {'id':'date', 'tip':'January 1, 2013', 'size': 1},
+        {'id':'details', 'tip':'blah blah this may include HTML links and tags', 'size': 8},
+        {'id':'importance', 'tip':'1~9', 'size': 1},
         ],
       },
     'seminars': {
       'seminar': [
-        {'id':'title', 'tip':'Representations etc'},
-        {'id':'date', 'tip':'Tuesday January 1, 2013' },
-        {'id':'time', 'tip':'12pm'},
-        {'id':'venue', 'tip':'1-222 FIT Building'},
-        {'id':'abstract', 'tip':'blabla'},
-        {'id':'extra', 'tip':'blabla'},
-        {'id':'urls', 'tip':'http://link1.com,http://link2.com'},
-        {'id':'speaker', 'tip':'Bangsheng Tang'},
-        {'id':'speaker_homepage', 'tip':'http://link.com'},
-        {'id':'speaker_bio', 'tip':'blabla'},
+        {'id':'title', 'tip':'Representations etc', 'size': 2},
+        {'id':'date', 'tip':'Tuesday January 1, 2013', 'size': 1},
+        {'id':'time', 'tip':'12pm', 'size': 1},
+        {'id':'venue', 'tip':'1-222 FIT Building', 'size': 1},
+        {'id':'abstract', 'tip':'blabla', 'size': 4},
+        {'id':'extra', 'tip':'blabla', 'size': 4},
+        {'id':'urls', 'tip':'http://link1.com,http://link2.com', 'size': 2},
+        {'id':'speaker', 'tip':'Bangsheng Tang', 'size': 1},
+        {'id':'speaker_homepage', 'tip':'http://link.com', 'size': 1},
+        {'id':'speaker_bio', 'tip':'blabla', 'size': 5},
         ],
       },
     'projects': {
       'project': [
-        {'id':'title', 'tip':'Halloween'},
-        {'id':'details_html', 'tip':'blah blah this may include HTML links and tags'},
+        {'id':'title', 'tip':'Halloween', 'size': 2},
+        {'id':'details_html', 'tip':'blah blah this may include HTML links and tags', 'size': 10},
         ],
       },
     'papers': {
       'paper': [
-        {'id':'category', 'tip':'Derandomization'},
-        {'id':'title', 'tip':'blabla'},
-        {'id':'author', 'tip':'Eric Allende[http://link1.com],Shiteng Chen[http://link2.com]'},
-        {'id':'date', 'tip':'January 1, 2013'},
-        {'id':'venue', 'tip':'Conference or Journal name'},
-        {'id':'paper_url', 'tip':'http://link.com'},
-        {'id':'fullpaper_url', 'tip':'http://link.com'},
-        {'id':'abstract', 'tip':'blabla'},
-        {'id':'bibtex', 'tip':'blabla'},
+        {'id':'title', 'tip':'blabla', 'size': 2},
+        {'id':'category', 'tip':'Derandomization', 'size': 1},
+        {'id':'author', 'tip':'Eric Allende[http://link1.com],Shiteng Chen[http://link2.com]', 'size': 3},
+        {'id':'date', 'tip':'January 1, 2013', 'size': 1},
+        {'id':'venue', 'tip':'Conference or Journal name', 'size': 1},
+        {'id':'paper_url', 'tip':'http://link.com', 'size': 1},
+        {'id':'fullpaper_url', 'tip':'http://link.com', 'size': 1},
+        {'id':'abstract', 'tip':'blabla', 'size': 6},
+        {'id':'bibtex', 'tip':'blabla', 'size': 5},
         ],
       'video': [
-        {'id':'title', 'tip':'blabla'},
-        {'id':'date', 'tip':'January 1, 2013'},
-        {'id':'url', 'tip':'http://link.com'},
-        {'id':'description', 'tip':'blabla'},
+        {'id':'title', 'tip':'blabla', 'size': 2},
+        {'id':'date', 'tip':'January 1, 2013', 'size': 1},
+        {'id':'url', 'tip':'http://link.com', 'size': 1},
+        {'id':'description', 'tip':'blabla', 'size': 10},
         ],
       'slide_files': [
-        {'id':'title', 'tip':'blabla'},
-        {'id':'date', 'tip':'January 1, 2013'},
-        {'id':'url', 'tip':'http://link.com'},
-        {'id':'description', 'tip':'blabla'},
+        {'id':'title', 'tip':'blabla', 'size': 2},
+        {'id':'date', 'tip':'January 1, 2013', 'size': 1},
+        {'id':'url', 'tip':'http://link.com', 'size': 1},
+        {'id':'description', 'tip':'blabla', 'size': 10},
         ],
       },
     }
@@ -202,7 +202,8 @@ class MainWin(QtGui.QWidget):
       if t['id'] in data.keys():
         text = data[t['id']]
       textItem = QtGui.QTextEdit(text)
-      textItem.setToolTip("<font size='8'>%s</font>" % t['tip'])
+      textItem.setMaximumHeight(labelItem.sizeHint().height() * t['size'])
+      textItem.setToolTip("<a style='font-size: 14px'>%s</a>" % t['tip'])
       self.dataList.append(textItem)
       self.listDetail.addWidget(textItem, index, 1)
       index += 1
