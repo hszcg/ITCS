@@ -202,7 +202,7 @@ class MainWin(QtGui.QWidget):
       if t['id'] in data.keys():
         text = data[t['id']]
       textItem = QtGui.QTextEdit(text)
-      textItem.setToolTip("<font size='10'>%s</font>" % t['tip'])
+      textItem.setToolTip("<font size='8'>%s</font>" % t['tip'])
       self.dataList.append(textItem)
       self.listDetail.addWidget(textItem, index, 1)
       index += 1
