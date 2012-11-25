@@ -15,7 +15,7 @@ html,body,p,div,img,h1,h2,h3,h4,h5,li,ul,ol,dl,dd,dt,form,pagele,td,tr,blockquot
 @font-face {
 	font-family: 'Bebas';
 	src: url('fonts/BebasNeue-webfont.eot');
-	src: local('¢'), url('fonts/BebasNeue-webfont.woff') format('woff'), url('fonts/BebasNeue-webfont.ttf') format('truetype'), url('fonts/BebasNeue-webfont.svg#webfontAGQ6uv7S') format('svg');
+	src: local('Â¢'), url('fonts/BebasNeue-webfont.woff') format('woff'), url('fonts/BebasNeue-webfont.ttf') format('truetype'), url('fonts/BebasNeue-webfont.svg#webfontAGQ6uv7S') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -69,8 +69,8 @@ h2 {
 }
 
 h3 {
-	color: #616161;
-	font-size: 22px;
+	color: #5F4B2C;
+	font-size: 20px;
 	font-weight: normal;
 	line-height: 22px;
 	margin-bottom: 10px;
@@ -78,8 +78,8 @@ h3 {
 
 h4 {
 	font-family: Bebas, Tahoma, Arial, sans-serif;
-	color: #2B99E6;
-	font-size: 20px; 
+	color: #B57716;
+	font-size: 14px; 
 	font-weight: normal;
 }
 
@@ -94,12 +94,47 @@ h6 {
 }
 
 a {
-	color: #2B99E6;
 	text-decoration: none;
+}
+
+a:link {
+	color: #b47a1f;
 }
 
 a:hover {
 	text-decoration: underline;
+}
+
+.bg-red {
+	color: #FFFFFF;
+	background-color: #AD1212;
+}
+
+.bg-yellow {
+	color: #401807;
+	background-color: #EDFF1A;
+}
+
+.bg-gray {
+	color: #401807;
+	background-color: #EEEEEE;
+}
+
+.bg-blue {
+	color: #401807;
+	background-color: #5990E0;
+}
+
+.bd-blue {
+	border-color: #5990E0;
+	border-style: solid;
+	border-width: 3px
+}
+
+.cat-btn button  {
+	color: #FFFFFF;
+	background-color: #D36F03;
+	font-size: 12px;
 }
 
 /********************BEGIN TABLES*****************/	
@@ -145,10 +180,10 @@ caption     {
 
 .separator-line {
 	border: none;
-	background: #eaeaea;
-	height: 7px;
-	margin-bottom: 30px;
-	margin-top: 0px;
+	background: #795B59;
+	height: 1px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 blockquote  {
@@ -186,14 +221,14 @@ ol li {
 /*****************END MISC ************************/
 
 #left {
-	width: 20%;
+	width: 200px;
 	position: fixed;
 }
 
 #right {
-	width: 80%;
-	background-color: #f7f7f7;
-	float: right;
+	width: 1000px;
+	background-color: #fcfcfb;
+	margin-left: 200px;
 }
 
 /*=== BACKGROUND PATTERNS
@@ -206,7 +241,7 @@ ol li {
 	}
 
 	.plates {
-		background: url(../img/plates.png) no-repeat 100% 0% #202020;
+		background: url(../img/plates.png) no-repeat 100% 0% #251b15;
 	}
 
 	.noise {
@@ -243,13 +278,13 @@ ol li {
 
 
 #content {
-	width: 700px;
+	width: 900px;
 	padding: 0 20px;
 }
 
 .page {
-	margin-bottom: 300px;
-	width: 700px;
+	//margin-bottom: 300px;
+	width: 900px;
 	padding: 30px  10px 30px 30px;
 }
 
@@ -283,11 +318,17 @@ ol li {
 
 .page h2 {
 	text-align: right;
-	line-height: 36px;
+	line-height: 18px;
+	color: #875206;
+}
+
+.page h2 .red{
+	line-height: 20px;
+	color: #ce5c00;
 }
 
 .sub-title {
-	border-bottom: 7px solid #eaeaea;
+	border-bottom: 1px solid #795b59;
 	margin-bottom: 30px;
 	font-size: 12px;
 	color: #8c8c8c;
@@ -315,11 +356,11 @@ ul#navigation {
 } 
 	
 ul#navigation li a {
-	font-size: 28px;
+	font-size: 14px;
 	line-height: 46px;
 	text-align: right;
 	text-shadow: 1px 1px #1e1e1e;
-	color: #f7f7f7;
+	color: #fbf6b4;
 	font-weight: 500;
 }
 
@@ -329,7 +370,7 @@ ul#navigation li a:hover {
 }
 
 ul#navigation li a.active {
-	color: #2B99E6;
+	color: #f85f02;
 }
 
 
@@ -349,13 +390,12 @@ ul#navigation li a.active {
 /*====CYCLE - SLIDER
 =======================================================*/
 .cycle {
-	
 	height: 285px;
 	background: url(../img/slider-shadow.png) no-repeat bottom center;
 }
 
 #slider-cycle {
-	width: 700px;
+	width: 100%;
 	height: 263px;
 	overflow: hidden;
 }
@@ -383,7 +423,7 @@ ul#navigation li a.active {
 }
 
 #slider-cycle li { 
-	width: 700px;
+	width: 100%;
 	height: 263px;
 	overflow: hidden; 
 	display: block;
@@ -537,15 +577,11 @@ ul#navigation li a.active {
 /*====BOXES
 =======================================================*/
 .boxes {
-	width: 700px;
-}
-
-.boxes img {
-	margin-bottom: 10px;
+	//width: 700px;
 }
 
 p {
-	padding-bottom: 15px;
+	padding-bottom: 5px;
 }
 
 .boxes h3 {
@@ -554,6 +590,43 @@ p {
 
 .box-title {
 	margin-bottom: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	word-wrap: break-word;
+}
+
+.box-title p {
+	padding-bottom: 0px;
+}
+
+.box-title .name {
+	font-size: 14px;
+	color: #401807;
+}
+
+.box-title .title {
+	font-size: 12px;
+	color: #797061;
+}
+
+.box-title .link {
+	font-size: 10px;
+	color: #b47a1f;
+}
+
+.box-title .interest {
+	font-size: 10px;
+	color: #8b7553;
+}
+
+.box-title .details {
+	font-size: 10px;
+	color: #8b7553;
+}
+
+.box-title .text {
+	font-size: 11px;
+	color: #6f480b;
 }
 
 .box-icon {
@@ -574,14 +647,14 @@ p {
 =======================================================*/
 .one-third {
 	float: left;
-	width: 210px;
+	width: 30%;
 	margin-right: 20px;
 	margin-bottom: 15px;
 }
 
 .two-third {
 	float: left;
-	width: 420px;
+	width: 65%;
 	margin-right: 20px;
 	margin-bottom: 15px;
 }
@@ -590,7 +663,8 @@ p {
 	float: left;
 	margin-right: 20px;
 	margin-bottom: 15px;
-	width: 325px;
+	width: 46%;
+	word-wrap: break-word;
 }
 
 .full-width {
@@ -601,21 +675,15 @@ p {
 	margin-right: 0px;
 }
 
-
-/*====BUTTONS
-=======================================================*/
-.boxes a, .post-more-link, .button {
-	font-size: 11px;
-	color: #f7f7f7;
-	padding: 3px 7px;
-	background: #2B99E6;
-	display: inline-block;
-	margin-bottom: 15px;
+.dashed-line {
+	border-right: 1px;
+	border-style: dashed;
 }
 
-.boxes a:hover, .post-more-link:hover, .button:hover {
-	background: #8c8c8c;
-	text-decoration: none;
+.dashed-line-h {
+	border-bottom: 1px;
+	border-style: dashed;
+	margin-bottom: 5px;
 }
 
 /*====TWITTER

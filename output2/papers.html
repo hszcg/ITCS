@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ITCS - Tsinghua Univ.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!--imports jquery-->
+<script>window.jQuery || document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"><\/script>')</script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/jquery.tweet.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
+<script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript">
+	$('#slider-cycle').cycle({ 
+		fx:      'growY', // transition type
+		speed:    600, 
+		timeout:  5000,
+		cleartype: false,   //  Fixes the issue with IE6+
+		startingSlide: 0,
+		next: '#cycle-next',
+		prev: '#cycle-prev'
+	});
+</script>
+<script type="text/javascript">
+	function item_filter(str) {
+		$('.box-title').hide();
+		$('.'+str).show();
+		$('.cat-btn button').css('background-color', '#A0A0A0');
+		$('.'+str+'-btn').css('background-color', '#D36F03');
+	}
+</script>
+
+<!--[if IE 7]><link href="css/ie7.css" rel="stylesheet" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="css/dblue.css" media="screen" />
+<script type="text/javascript" src="js/options.js"></script>
+
+</head>
+
+<body>
+	<div id="left" class="plates">
+		<ul id="navigation">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="people.html">People</a></li>
+			<li><a href="announcements.html">Announcements</a></li>
+			<li><a href="seminars.html">Seminars</a></li>
+			<li><a href="projects.html">Projects</a></li>
+			<li><a class="active" href="papers.html">Papers/Resources</a></li>
+		</ul>	
+	</div><!-- end left -->
+	
+	<div id="right" class="square-grid">
+		<div id="home" class="page">
+			<div style="min-height: 50px;">
+				<img src="img/logo.png" align="left" style="width: 150px;" alt="ITCS" />
+				<h2>Laboratory For The Study of <font class='red'>R</font>andomness</h2>
+				<br>
+				<h2>in <font class='red'>C</font>omputation and <font class='red'>C</font>ryptographic <font class='red'>C</font>omplexity</h2>
+			</div>
+			<div class="separator-line"></div>
+			<div>
+				<h3>Papers/Resources</h3>
+			</div>
+			<div class="featured cycle">
+				<ul id="slider-cycle">
+					<li>
+						<img src="img/slide-0.gif" alt="image" style="width: 900px;"/>
+					</li>
+					<li>
+						<img src="img/slide-0.gif" alt="image" style="width: 900px;"/>
+					</li>
+				</ul>
+			</div><!-- end featured -->	
+			<div class="separator-line"></div>
+			<div class="cat-btn">
+				<button class="papers-btn" onclick="item_filter('papers')">Papers</button>
+				<button class="videos-btn" onclick="item_filter('videos')">Videos</button>
+				<button class="slides-btn" onclick="item_filter('slides')">Slides</button>
+			</div>
+			<div style="float: right; display: none;">
+			<div class="box-title">
+				<h3>All</h3>
+			</div>
+			<div class="box-title papers" style="display: none;">
+				<h3>Papers</h3>
+			</div>
+			<div class="box-title videos" style="display: none;">
+				<h3>Videos</h3>
+			</div>
+			<div class="box-title slides" style="display: none;">
+				<h3>Slides</h3>
+			</div>
+			</div>
+			<div class="separator-line"></div>
+			<div class="boxes">
+				<div class="full-width">
+					<div class="box-title papers">
+						<div style="min-height: 120px; margin-top: 5px;">
+							<h4>Paper blah blah</h4>
+							<p class='title' style="margin-top: 10px;">Derandomization</p>
+							<p class='text' style="margin-top: 10px;">Eric Allender, Shiteng Chen</p>
+							<p class='text' style="margin-top: 10px;">Conference or Journal name</p>	
+							<p class='details' style="margin-top: 10px;">January 1, 2013</p>
+							
+							<li style="margin-top: 10px;">Abstract</li>
+							<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
+							<li style="margin-top: 10px;">Link</li>
+							<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
+							<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
+							<li>Bibtex</li>
+							<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
+						</div>
+						<div class="clear"></div>
+						<div class="dashed-line-h"></div>
+					</div>
+						<div class="box-title videos">
+						<div style="min-height: 120px; margin-top: 5px;">
+							<h4>Title: Video blah blah</h4>
+							<p class='title'>Tuesday January 1, 2013</p>
+							<li style="margin-top: 10px;">Download: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></li>
+							<li>About</li>
+							<p class="details"  style="margin-top: 10px;">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
+
+						</div>
+						<div class="clear"></div>				
+						<div class="dashed-line-h"></div>
+					</div>	
+						<div class="box-title slides">
+							<div style="min-height: 120px; margin-top: 5px;">
+								<h4>Title: Slide blah blah</h4>
+								<p class='title'>Tuesday January 1, 2013</p>
+								<li style="margin-top: 10px;">Download: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></li>
+								<li>About</li>
+								<p class="details"  style="margin-top: 10px;">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
+						</div>
+						<div class="clear"></div>				
+						<div class="dashed-line-h"></div>
+					</div>
+						<p align="center" style="margin-top: 10px;">
+							<img src="img/button/first.png" href='#' />
+							<img src="img/button/prev.png" style="margin-left: 8px;" href='#' />
+							<a href='#' style="margin-left: 8px;">1</a>
+							<img src="img/button/next.png" style="margin-left: 8px;" href='#' />
+							<img src="img/button/last.png" style="margin-left: 8px;" href='#' /></p>
+					</div>
+				</div>			
+			<div class="clear"></div>
+			<div class="separator-line"></div>	
+			<p align="center">Copyright 2012 · All Rights Reserved ITCS@Tsinghua University</a></p>
+		</div><!-- end home page -->
+	</div><!-- end right -->	
+</body>
+
+</html>
