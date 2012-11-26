@@ -4,40 +4,41 @@
 <title>ITCS - Tsinghua Univ.</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<!--imports jquery-->
-<script>window.jQuery || document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"><\/script>')</script>
-<script type="text/javascript" src="js/jquery.form.js"></script>
-<script type="text/javascript" src="js/jquery.tweet.js"></script>
-<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
-<script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
-<script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
-<script type="text/javascript" src="js/jquery.tools.min.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/dblue.css" media="screen" />
+<link rel='stylesheet' type='text/css' href='css/basic.css' media='screen' />
+
+<!--[if IE 7]>
+<link type="text/css" href="css/ie7.css" rel="stylesheet" media="screen" />
+<![endif]-->
+<!--[if lt IE 7]>
+<link type='text/css' href='css/basic_ie.css' rel='stylesheet' media='screen' />
+<![endif]-->
+
 <script type="text/javascript">
-	$('#slider-cycle').cycle({ 
-		fx:      'growY', // transition type
-		speed:    600, 
-		timeout:  5000,
-		cleartype: false,   //  Fixes the issue with IE6+
-		startingSlide: 0,
-		next: '#cycle-next',
-		prev: '#cycle-prev'
+jQuery(function ($) {
+	// Load dialog on click
+	$('.basic-modal').click(function (e) {
+		$('#basic-modal-content-'+$(this).val()).modal();
+		return false;
 	});
+});
 </script>
+
 <script type="text/javascript">
 	function item_filter(str) {
 		$('.box-title').hide();
 		$('.'+str).show();
-		$('.cat-btn button').css('background-color', '#A0A0A0');
-		$('.'+str+'-btn').css('background-color', '#D36F03');
+		$('.cat-btn .tag').css('background-color', '#A0A0A0');
+		$('#'+str+'-btn').css('background-color', '#D36F03');
 	}
+	
+	$(document).ready(function() {
+	  item_filter('papers')
+	});
 </script>
-
-<!--[if IE 7]><link href="css/ie7.css" rel="stylesheet" type="text/css" media="screen" /><![endif]-->
-<link rel="stylesheet" type="text/css" href="css/dblue.css" media="screen" />
-<script type="text/javascript" src="js/options.js"></script>
 
 </head>
 
@@ -62,24 +63,12 @@
 				<h2>in <font class='red'>C</font>omputation and <font class='red'>C</font>ryptographic <font class='red'>C</font>omplexity</h2>
 			</div>
 			<div class="separator-line"></div>
-			<div>
-				<h3>Papers/Resources</h3>
-			</div>
-			<div class="featured cycle">
-				<ul id="slider-cycle">
-					<li>
-						<img src="img/slide-0.gif" alt="image" style="width: 900px;"/>
-					</li>
-					<li>
-						<img src="img/slide-0.gif" alt="image" style="width: 900px;"/>
-					</li>
-				</ul>
-			</div><!-- end featured -->	
+			<h3>Papers/Resources</h3>
 			<div class="separator-line"></div>
 			<div class="cat-btn">
-				<button class="papers-btn" onclick="item_filter('papers')">Papers</button>
-				<button class="videos-btn" onclick="item_filter('videos')">Videos</button>
-				<button class="slides-btn" onclick="item_filter('slides')">Slides</button>
+				<button id="papers-btn" class="tag" onclick="item_filter('papers')">Papers</button>
+				<button id="videos-btn" class="tag" onclick="item_filter('videos')">Videos</button>
+				<button id="slides-btn" class="tag" onclick="item_filter('slides')">Slides</button>
 			</div>
 			<div style="float: right; display: none;">
 			<div class="box-title">
@@ -101,18 +90,28 @@
 					<div class="box-title papers">
 						<div style="min-height: 120px; margin-top: 5px;">
 							<h4>Paper blah blah</h4>
-							<p class='title' style="margin-top: 10px;">Derandomization</p>
-							<p class='text' style="margin-top: 10px;">Eric Allender, Shiteng Chen</p>
-							<p class='text' style="margin-top: 10px;">Conference or Journal name</p>	
-							<p class='details' style="margin-top: 10px;">January 1, 2013</p>
-							
-							<li style="margin-top: 10px;">Abstract</li>
+							<p class='title' style="margin-top: 10px; display:none;">Derandomization</p>
+							<p class='title' style="margin-top: 10px;">Eric Allender, Shiteng Chen</p>
+							<p class='title' style="margin-top: 10px;">Conference or Journal name, January 1, 2013</p>
+							<div class="cat-btn">
+								<button class="basic-modal" value='0-0'>More</button>
+								<button class="basic-modal" value='0-1'>Bibtex</button>
+							</div>
+							<div id="basic-modal-content-0-0" class="basic-modal-hide">
+								<h4>Paper blah blah</h4>
+								<p class='title' style="margin-top: 10px; display:none;">Derandomization</p>
+								<p class='title' style="margin-top: 10px;">Eric Allender, Shiteng Chen</p>
+								<p class='title' style="margin-top: 10px;">Conference or Journal name, January 1, 2013</p>
+							<li style="margin-top: 5px;">Abstract</li>
 							<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
-							<li style="margin-top: 10px;">Link</li>
+							<li style="margin-top: 5px;">Link</li>
 							<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
 							<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
+							</div>
+							<div id="basic-modal-content-0-1" class="basic-modal-hide">
 							<li>Bibtex</li>
 							<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
+							</div>
 						</div>
 						<div class="clear"></div>
 						<div class="dashed-line-h"></div>
@@ -122,9 +121,16 @@
 							<h4>Title: Video blah blah</h4>
 							<p class='title'>Tuesday January 1, 2013</p>
 							<li style="margin-top: 10px;">Download: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></li>
+							<div class="cat-btn">
+								<button class="basic-modal" value='1'>More</button>
+							</div>
+							<div id="basic-modal-content-1" class="basic-modal-hide">
+								<h4>Title: Video blah blah</h4>
+								<p class='title'>Tuesday January 1, 2013</p>
+								<li style="margin-top: 10px;">Download: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></li>
 							<li>About</li>
 							<p class="details"  style="margin-top: 10px;">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
-
+							</div>
 						</div>
 						<div class="clear"></div>				
 						<div class="dashed-line-h"></div>
@@ -134,8 +140,16 @@
 								<h4>Title: Slide blah blah</h4>
 								<p class='title'>Tuesday January 1, 2013</p>
 								<li style="margin-top: 10px;">Download: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></li>
+								<div class="cat-btn">
+									<button class="basic-modal" value='2'>More</button>
+								</div>
+								<div id="basic-modal-content-2" class="basic-modal-hide">
+									<h4>Title: Slide blah blah</h4>
+									<p class='title'>Tuesday January 1, 2013</p>
+									<li style="margin-top: 10px;">Download: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></li>
 								<li>About</li>
 								<p class="details"  style="margin-top: 10px;">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
+								</div>
 						</div>
 						<div class="clear"></div>				
 						<div class="dashed-line-h"></div>
@@ -150,7 +164,7 @@
 				</div>			
 			<div class="clear"></div>
 			<div class="separator-line"></div>	
-			<p align="center">Copyright 2012 · All Rights Reserved ITCS@Tsinghua University</a></p>
+			<p align="center">Copyright 2012 · All Rights Reserved IIIS@Tsinghua University</a></p>
 		</div><!-- end home page -->
 	</div><!-- end right -->	
 </body>

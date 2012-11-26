@@ -4,32 +4,29 @@
 <title>ITCS - Tsinghua Univ.</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<!--imports jquery-->
-<script>window.jQuery || document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"><\/script>')</script>
-<script type="text/javascript" src="js/jquery.form.js"></script>
-<script type="text/javascript" src="js/jquery.tweet.js"></script>
-<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
-<script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
-<script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
-<script type="text/javascript" src="js/jquery.tools.min.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/dblue.css" media="screen" />
+<link rel='stylesheet' type='text/css' href='css/basic.css' media='screen' />
+
+<!--[if IE 7]>
+<link type="text/css" href="css/ie7.css" rel="stylesheet" media="screen" />
+<![endif]-->
+<!--[if lt IE 7]>
+<link type='text/css' href='css/basic_ie.css' rel='stylesheet' media='screen' />
+<![endif]-->
+
 <script type="text/javascript">
-	$('#slider-cycle').cycle({ 
-		fx:      'growY', // transition type
-		speed:    600, 
-		timeout:  5000,
-		cleartype: false,   //  Fixes the issue with IE6+
-		startingSlide: 0,
-		next: '#cycle-next',
-		prev: '#cycle-prev'
+jQuery(function ($) {
+	// Load dialog on click
+	$('.basic-modal').click(function (e) {
+		$('#basic-modal-content-'+$(this).val()).modal();
+		return false;
 	});
+});
 </script>
 
-<!--[if IE 7]><link href="css/ie7.css" rel="stylesheet" type="text/css" media="screen" /><![endif]-->
-<link rel="stylesheet" type="text/css" href="css/dblue.css" media="screen" />
-<script type="text/javascript" src="js/options.js"></script>
 
 </head>
 
@@ -54,70 +51,75 @@
 				<h2>in <font class='red'>C</font>omputation and <font class='red'>C</font>ryptographic <font class='red'>C</font>omplexity</h2>
 			</div>
 			<div class="separator-line"></div>
-			<div class="box-title">
-				<h3>Seminars</h3>
-			</div>
-			<div class="featured cycle">
-				<ul id="slider-cycle">
-					<li>
-						<img src="img/slide-0.gif" alt="image" style="width: 900px;"/>
-					</li>
-					<li>
-						<img src="img/slide-0.gif" alt="image" style="width: 900px;"/>
-					</li>
-				</ul>
-			</div><!-- end featured -->	
-			<div class="separator-line"></div>
+			<h3>Seminars</h3>
 			<div class="boxes">
 				<div class="full-width">
 					<div class="box-title">
 						<h4 class='bg-red'>Representations etc</h4>
-						<div style="min-height: 120px; margin-top: 5px;">
+						<div style="min-height: 100px; margin-top: 5px;">
 							<p class='title'>Tuesday January 1, 2013</p>
-						<div style="margin-left: 10px;">
 							<p class='title'>Speaker: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>Bangsheng Tang</a></p>
-							<p class='title'>Time: 12 pm</p>
-							<p class='title'>Place: 1-222 FIT Building</p>
-							<li>Abstract</li>
-							<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
-							<li>Link</li>
-							<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
-							<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
+							<p class='title'>Place: 1-222 FIT Building, Time: 12 pm<</p>
+							<div class="cat-btn">
+								<button class="basic-modal" value='0'>More</button>
+							</div>
+							<div id="basic-modal-content-0" class="basic-modal-hide">
+								<h4>Representations etc</h4>
+								<p class='title'>Tuesday January 1, 2013</p>
+								<p class='title'>Speaker: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>Bangsheng Tang</a></p>
+								<p class='title'>Place: 1-222 FIT Building, Time: 12 pm<</p>
+								<li>Abstract</li>
+								<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
+								<li>Links</li>
+								<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
+								<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
 						</div>
 						</div>
 						<div class="clear"></div>
 						<div class="dashed-line-h"></div>
 						<h4 class='bg-red'>Representations etc</h4>
-						<div style="min-height: 120px; margin-top: 5px;">
+						<div style="min-height: 100px; margin-top: 5px;">
 							<p class='title'>Tuesday January 1, 2013</p>
-						<div style="margin-left: 10px;">
 							<p class='title'>Speaker: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>Bangsheng Tang</a></p>
-							<p class='title'>Time: 12 pm</p>
-							<p class='title'>Place: 1-222 FIT Building</p>
-							<li>Abstract</li>
-							<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
-							<li>Link</li>
-							<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
-							<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
+							<p class='title'>Place: 1-222 FIT Building, Time: 12 pm<</p>
+							<div class="cat-btn">
+								<button class="basic-modal" value='1'>More</button>
+							</div>
+							<div id="basic-modal-content-1" class="basic-modal-hide">
+								<h4>Representations etc</h4>
+								<p class='title'>Tuesday January 1, 2013</p>
+								<p class='title'>Speaker: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>Bangsheng Tang</a></p>
+								<p class='title'>Place: 1-222 FIT Building, Time: 12 pm<</p>
+								<li>Abstract</li>
+								<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
+								<li>Links</li>
+								<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
+								<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
 						</div>
-						</div>						
+						</div>										
 						<div class="clear"></div>				
 						<div class="dashed-line-h"></div>
 						<h4 class='bg-red'>Representations etc</h4>
-						<div style="min-height: 120px; margin-top: 5px;">
+						<div style="min-height: 100px; margin-top: 5px;">
 							<p class='title'>Tuesday January 1, 2013</p>
-						<div style="margin-left: 10px;">
 							<p class='title'>Speaker: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>Bangsheng Tang</a></p>
-							<p class='title'>Time: 12 pm</p>
-							<p class='title'>Place: 1-222 FIT Building</p>
-							<li>Abstract</li>
-							<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
-							<li>Link</li>
-							<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
-							<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
+							<p class='title'>Place: 1-222 FIT Building, Time: 12 pm<</p>
+							<div class="cat-btn">
+								<button class="basic-modal" value='2'>More</button>
+							</div>
+							<div id="basic-modal-content-2" class="basic-modal-hide">
+								<h4>Representations etc</h4>
+								<p class='title'>Tuesday January 1, 2013</p>
+								<p class='title'>Speaker: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>Bangsheng Tang</a></p>
+								<p class='title'>Place: 1-222 FIT Building, Time: 12 pm<</p>
+								<li>Abstract</li>
+								<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
+								<li>Links</li>
+								<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
+								<p class='link'><a href='http://iiis.tsinghua.edu.cn/~papakons/'>http://iiis.tsinghua.edu.cn/~papakons/</a></p>
 						</div>
 						</div>
-						
+												
 						<div class="clear"></div>				
 						<div class="dashed-line-h"></div>
 						<p align="center" style="margin-top: 10px;">
@@ -130,7 +132,7 @@
 				</div>			
 			<div class="clear"></div>
 			<div class="separator-line"></div>	
-			<p align="center">Copyright 2012 · All Rights Reserved ITCS@Tsinghua University</a></p>
+			<p align="center">Copyright 2012 · All Rights Reserved IIIS@Tsinghua University</a></p>
 		</div><!-- end home page -->
 	</div><!-- end right -->	
 </body>

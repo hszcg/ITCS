@@ -7,59 +7,76 @@ import json
 
 structArr = {
     'people': {
+      'counter': [
+        {'id':'code', 'tip':'Enter&nbsp;Code&nbsp;Here.', 'size': 20},
+        ],
       'member': [
-        {'id':'name', 'tip':'Guang Yang', 'size': 1},
-        {'id':'role', 'tip':'phd OR faculty', 'size': 1},
+        {'id':'name', 'tip':'Guang&nbsp;Yang', 'size': 1},
+        {'id':'type', 'tip':'Faculty&nbsp;OR&nbsp;Graduate&nbsp;OR&nbsp;Undergraduate', 'size': 1},
+        {'id':'role', 'tip':'Assistant&nbsp;Professor&nbsp;OR&nbsp;MS&nbsp;Student&nbsp;OR&nbsp;PhD&nbsp;Student', 'size': 1},
         {'id':'homepage', 'tip':'http://itcs.tsinghua.edu.cn/guangyang/', 'size': 2},
-        {'id':'interest', 'tip':'Cryptography, Derandomization', 'size': 1},
-        {'id':'details', 'tip':'blah blah this may include HTML links and tags', 'size': 8},
+        {'id':'interest', 'tip':'Cryptography,&nbsp;Derandomization', 'size': 1},
+        {'id':'details', 'tip':'blah&nbsp;blah&nbsp;this&nbsp;may&nbsp;include&nbsp;HTML&nbsp;links&nbsp;and&nbsp;tags', 'size': 8},
         {'id':'photo', 'tip':'image/guangyang.jpg', 'size': 1},
         ],
       'former_member': [
-        {'id':'name', 'tip':'Wei Yu', 'size': 1},
-        {'id':'role', 'tip':'phd OR faculty', 'size': 1},
-        {'id':'current_affiliation', 'tip':'CTIC, Aarhus University', 'size': 1},
+        {'id':'name', 'tip':'Wei&nbsp;Yu', 'size': 1},
+        {'id':'role', 'tip':'Faculty&nbsp;OR&nbsp;Graduate&nbsp;OR&nbsp;Undergraduate', 'size': 1},
+        {'id':'current_affiliation', 'tip':'CTIC,&nbsp;Aarhus&nbsp;University', 'size': 1},
         {'id':'current_homepage', 'tip':'http://pure.au.dk/portal/en/persons/id(f644ac9a-1af0-4ebc-863c-d9e909fbae5f).html', 'size': 2},
         {'id':'interest', 'tip':'Joking', 'size': 1},
-        {'id':'details', 'tip':'blah blah this may include HTML links and tags', 'size': 8},
+        {'id':'details', 'tip':'blah&nbsp;blah&nbsp;this&nbsp;may&nbsp;include&nbsp;HTML&nbsp;links&nbsp;and&nbsp;tags', 'size': 8},
         {'id':'photo', 'tip':'image/weiyu.jpg', 'size': 1},
         ],
       },
     'announcements': {
+      'counter': [
+        {'id':'code', 'tip':'Enter&nbsp;Code&nbsp;Here.', 'size': 20},
+        ],
       'announcement': [
-        {'id':'title', 'tip':'Congratulations to Guang Yang for winning the new scientist Tsinghua award!', 'size': 3},
-        {'id':'date', 'tip':'January 1, 2013', 'size': 1},
-        {'id':'details', 'tip':'blah blah this may include HTML links and tags', 'size': 8},
-        {'id':'importance', 'tip':'1~9', 'size': 1},
+        {'id':'title', 'tip':'Congratulations&nbsp;to&nbsp;Guang&nbsp;Yang&nbsp;for&nbsp;winning&nbsp;the&nbsp;new&nbsp;scientist&nbsp;Tsinghua&nbsp;award!', 'size': 3},
+        {'id':'date', 'tip':'January&nbsp;1,&nbsp;2013', 'size': 1},
+        {'id':'details', 'tip':'blah&nbsp;blah&nbsp;this&nbsp;may&nbsp;include&nbsp;HTML&nbsp;links&nbsp;and&nbsp;tags', 'size': 8},
+        {'id':'importance', 'tip':'1-Important,&nbsp;0-Not', 'size': 1},
         ],
       },
     'seminars': {
+      'counter': [
+        {'id':'code', 'tip':'Enter&nbsp;Code&nbsp;Here.', 'size': 20},
+        ],
       'seminar': [
-        {'id':'title', 'tip':'Representations etc', 'size': 2},
-        {'id':'date', 'tip':'Tuesday January 1, 2013', 'size': 1},
+        {'id':'title', 'tip':'Representations&nbsp;etc', 'size': 2},
+        {'id':'date', 'tip':'Tuesday&nbsp;January&nbsp;1,&nbsp;2013', 'size': 1},
         {'id':'time', 'tip':'12pm', 'size': 1},
-        {'id':'venue', 'tip':'1-222 FIT Building', 'size': 1},
+        {'id':'venue', 'tip':'1-222&nbsp;FIT&nbsp;Building', 'size': 1},
         {'id':'abstract', 'tip':'blabla', 'size': 4},
         {'id':'extra', 'tip':'blabla', 'size': 4},
         {'id':'urls', 'tip':'http://link1.com,http://link2.com', 'size': 2},
-        {'id':'speaker', 'tip':'Bangsheng Tang', 'size': 1},
+        {'id':'speaker', 'tip':'Bangsheng&nbsp;Tang', 'size': 1},
         {'id':'speaker_homepage', 'tip':'http://link.com', 'size': 1},
         {'id':'speaker_bio', 'tip':'blabla', 'size': 5},
+        {'id':'speaker_photo', 'tip':'image/weiyu.jpg', 'size': 1},
         ],
       },
     'projects': {
+      'counter': [
+        {'id':'code', 'tip':'Enter&nbsp;Code&nbsp;Here.', 'size': 20},
+        ],
       'project': [
         {'id':'title', 'tip':'Halloween', 'size': 2},
-        {'id':'details_html', 'tip':'blah blah this may include HTML links and tags', 'size': 10},
+        {'id':'details_html', 'tip':'blah&nbsp;blah&nbsp;this&nbsp;may&nbsp;include&nbsp;HTML&nbsp;links&nbsp;and&nbsp;tags', 'size': 10},
         ],
       },
     'papers': {
+      'counter': [
+        {'id':'code', 'tip':'Enter&nbsp;Code&nbsp;Here.', 'size': 20},
+        ],
       'paper': [
         {'id':'title', 'tip':'blabla', 'size': 2},
         {'id':'category', 'tip':'Derandomization', 'size': 1},
-        {'id':'author', 'tip':'Eric Allende[http://link1.com],Shiteng Chen[http://link2.com]', 'size': 3},
-        {'id':'date', 'tip':'January 1, 2013', 'size': 1},
-        {'id':'venue', 'tip':'Conference or Journal name', 'size': 1},
+        {'id':'author', 'tip':'Eric&nbsp;Allende[http://link1.com],&nbsp;Shiteng&nbsp;Chen[http://link2.com]', 'size': 3},
+        {'id':'date', 'tip':'January&nbsp;1,&nbsp;2013', 'size': 1},
+        {'id':'venue', 'tip':'Conference&nbsp;or&nbsp;Journal&nbsp;name', 'size': 1},
         {'id':'paper_url', 'tip':'http://link.com', 'size': 1},
         {'id':'fullpaper_url', 'tip':'http://link.com', 'size': 1},
         {'id':'abstract', 'tip':'blabla', 'size': 6},
@@ -67,13 +84,13 @@ structArr = {
         ],
       'video': [
         {'id':'title', 'tip':'blabla', 'size': 2},
-        {'id':'date', 'tip':'January 1, 2013', 'size': 1},
+        {'id':'date', 'tip':'January&nbsp;1,&nbsp;2013', 'size': 1},
         {'id':'url', 'tip':'http://link.com', 'size': 1},
         {'id':'description', 'tip':'blabla', 'size': 10},
         ],
       'slide_files': [
         {'id':'title', 'tip':'blabla', 'size': 2},
-        {'id':'date', 'tip':'January 1, 2013', 'size': 1},
+        {'id':'date', 'tip':'January&nbsp;1,&nbsp;2013', 'size': 1},
         {'id':'url', 'tip':'http://link.com', 'size': 1},
         {'id':'description', 'tip':'blabla', 'size': 10},
         ],
