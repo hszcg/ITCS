@@ -6,6 +6,7 @@
 
 <script type='text/javascript' src='js/jquery.js'></script>
 <script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+<script type='text/javascript' src='js/basic.js'></script>
 
 <link rel="stylesheet" type="text/css" href="css/dblue.css" media="screen" />
 <link rel='stylesheet' type='text/css' href='css/basic.css' media='screen' />
@@ -16,17 +17,6 @@
 <!--[if lt IE 7]>
 <link type='text/css' href='css/basic_ie.css' rel='stylesheet' media='screen' />
 <![endif]-->
-
-<script type="text/javascript">
-jQuery(function ($) {
-	// Load dialog on click
-	$('.basic-modal').click(function (e) {
-		$('#basic-modal-content-'+$(this).val()).modal();
-		return false;
-	});
-});
-</script>
-
 
 </head>
 
@@ -59,15 +49,15 @@ jQuery(function ($) {
 						<div style="min-height: 100px; margin-top: 5px;">
 							<p class='title'>Tuesday January 1, 2013</p>
 							<p class='title'>Speaker: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>Bangsheng Tang</a></p>
-							<p class='title'>Place: 1-222 FIT Building, Time: 12 pm<</p>
+							<p class='title'>Place: 1-222 FIT Building, Time: 12 pm</p>
 							<div class="cat-btn">
-								<button class="basic-modal" value='0'>More</button>
+								<button class="basic-modal" value='0'>Details</button>
 							</div>
 							<div id="basic-modal-content-0" class="basic-modal-hide">
 								<h4>Representations etc</h4>
 								<p class='title'>Tuesday January 1, 2013</p>
 								<p class='title'>Speaker: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>Bangsheng Tang</a></p>
-								<p class='title'>Place: 1-222 FIT Building, Time: 12 pm<</p>
+								<p class='title'>Place: 1-222 FIT Building, Time: 12 pm</p>
 								<li>Abstract</li>
 								<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
 								<li>Links</li>
@@ -81,15 +71,15 @@ jQuery(function ($) {
 						<div style="min-height: 100px; margin-top: 5px;">
 							<p class='title'>Tuesday January 1, 2013</p>
 							<p class='title'>Speaker: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>Bangsheng Tang</a></p>
-							<p class='title'>Place: 1-222 FIT Building, Time: 12 pm<</p>
+							<p class='title'>Place: 1-222 FIT Building, Time: 12 pm</p>
 							<div class="cat-btn">
-								<button class="basic-modal" value='1'>More</button>
+								<button class="basic-modal" value='1'>Details</button>
 							</div>
 							<div id="basic-modal-content-1" class="basic-modal-hide">
 								<h4>Representations etc</h4>
 								<p class='title'>Tuesday January 1, 2013</p>
 								<p class='title'>Speaker: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>Bangsheng Tang</a></p>
-								<p class='title'>Place: 1-222 FIT Building, Time: 12 pm<</p>
+								<p class='title'>Place: 1-222 FIT Building, Time: 12 pm</p>
 								<li>Abstract</li>
 								<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
 								<li>Links</li>
@@ -103,15 +93,15 @@ jQuery(function ($) {
 						<div style="min-height: 100px; margin-top: 5px;">
 							<p class='title'>Tuesday January 1, 2013</p>
 							<p class='title'>Speaker: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>Bangsheng Tang</a></p>
-							<p class='title'>Place: 1-222 FIT Building, Time: 12 pm<</p>
+							<p class='title'>Place: 1-222 FIT Building, Time: 12 pm</p>
 							<div class="cat-btn">
-								<button class="basic-modal" value='2'>More</button>
+								<button class="basic-modal" value='2'>Details</button>
 							</div>
 							<div id="basic-modal-content-2" class="basic-modal-hide">
 								<h4>Representations etc</h4>
 								<p class='title'>Tuesday January 1, 2013</p>
 								<p class='title'>Speaker: <a href='http://iiis.tsinghua.edu.cn/~papakons/'>Bangsheng Tang</a></p>
-								<p class='title'>Place: 1-222 FIT Building, Time: 12 pm<</p>
+								<p class='title'>Place: 1-222 FIT Building, Time: 12 pm</p>
 								<li>Abstract</li>
 								<p class="details">blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...blabla...</p>
 								<li>Links</li>
@@ -132,7 +122,7 @@ jQuery(function ($) {
 				</div>			
 			<div class="clear"></div>
 			<div class="separator-line"></div>	
-			<p align="center">Copyright 2012 · All Rights Reserved IIIS@Tsinghua University</a></p>
+			<p align="center">Copyright 2012 · All Rights Reserved IIIS, Tsinghua University</a></p>
 		</div><!-- end home page -->
 	</div><!-- end right -->	
 </body>
