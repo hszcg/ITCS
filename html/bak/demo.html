@@ -1,0 +1,734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Black single page demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+<!--imports Google Maps API key-->
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAp8ZX4creCGlC9gSrVQEbERSHZIh53XfjW_ljkOD4q_5yLMJFyhRo9YoevH3sPGEQe0y4BDDuNSdGnw" type="text/javascript"></script>
+<!--imports jquery-->
+<script>window.jQuery || document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"><\/script>')</script>
+<!--imports jquery form plugin-->
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<!--imports twitter feed plugin-->
+<script type="text/javascript" src="js/jquery.tweet.js"></script>
+<!--imports cycle slider plugin-->
+<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+<!--imports easing plugin-->
+<script type="text/javascript" src="js/easing.js"></script>
+<!--imports prettyPhoto plugin-->
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<!--imports scrollTo plugin-->
+<script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
+<!--imports local scroll plugin-->
+<script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
+<!--imports jQuery Tools plugin-->
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+
+<!--imports custom javascript code-->
+<script type="text/javascript" src="js/custom.js"></script>
+
+<!-- handles the jquery cycle slider -->
+<script type="text/javascript">
+
+	$('#slider-cycle').cycle({ 
+		fx:      'growY', // transition type
+		speed:    600, 
+		timeout:  5000,
+		cleartype: false,   //  Fixes the issue with IE6+
+		startingSlide: 0,
+		next: '#cycle-next',
+		prev: '#cycle-prev'
+	});
+		
+</script>
+
+<!--[if IE 7]><link href="css/ie7.css" rel="stylesheet" type="text/css" media="screen" /><![endif]-->
+
+<link rel="stylesheet" type="text/css" href="css/dblue.css" media="screen" />
+<script type="text/javascript" src="js/options.js"></script>
+
+
+</head>
+
+<body>
+
+	<div id="left" class="plates">
+		<ul id="navigation">
+			<li><a class="active" href="#home">首页</a></li>
+			<li><a href="#about">关于我们</a></li>
+			<li><a href="#portfolio">作品集</a></li>
+			<li><a href="#blog">个人博客</a></li>
+			<li><a href="#contact">留言</a></li>
+		</ul>
+		
+		<div id="logo">
+			<h1><a href="#home">&nbsp;</a></h1>
+		</div>
+		<p id="copyright">© Copyright 2010 · All Rights Reserved <a href="http://www.gbin1.com">GBin1.com</a></p>
+		
+	</div><!-- end left -->	
+	
+	<div id="right" class="square-grid">
+
+		<div id="home" class="page">
+				<h2>welcome to GBin1.com</h2>
+				<p class="sub-title">About us</p>
+				<div class="featured cycle">
+					
+					<ul id="slider-cycle">
+						<!-- slide 1 -->
+						<li>
+							<img src="img/slide-1.jpg" alt="image" />
+							<!-- caption text -->
+							<div class="caption">
+								<h3>Consectetur Adipiscing</h3>
+								<p>Donec vel sem nibh, eu aliquet leo praesent dapibus massa.</p>
+							</div><!-- end caption -->
+						</li>
+						<!-- slide 2 -->
+						<li>
+							<img src="img/slide-2.jpg" alt="image" />
+							<!-- caption text -->
+							<div class="caption">
+								<h3>Accumsan dolor velit</h3>
+								<p>Donec vel sem nibh, eu aliquet leo praesent dapibus massa.</p>
+							</div><!-- end caption -->
+						</li>
+						<!-- slide 3 -->
+						<li>
+							<img src="img/slide-3.jpg" alt="image" />
+							<!-- caption text -->
+							<div class="caption">
+								<h3>Donec vel sem nibh</h3>
+								<p>Donec vel sem nibh, eu aliquet leo. Praesent dapibus, massa euismod tempus scelerisque, ipsum tellus faucibus.</p>
+							</div><!-- end caption -->
+						</li>
+					</ul>
+					
+					<ul id="slider-cycle-nav">
+						<li><a id="cycle-prev"></a></li>
+						<li><a id="cycle-next"></a></li>
+					</ul>
+					
+				</div><!-- end featured -->
+				
+				<div class="separator-line"></div>
+				
+				<p class="slogan">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pretium luc tus urna, <a href="#">nec commodo</a> erat tempus ac. Ut accumsan dolor velit.</p>
+			
+			<div class="separator-line"></div>
+			
+			<div class="boxes">
+				<div class="one-third">
+					<div class="box-title">
+						<img class="box-icon" src="img/flame.png" alt="image" />
+						<h3>Powerslave</h3>
+						<span class="subtitle">Quisque lobortis</span>
+					</div>	
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+					<a href="#">Read More</a>
+				</div>
+				
+				<div class="one-third">
+					<div class="box-title">
+						<img class="box-icon" src="img/monitor.png" alt="image" />
+						<h3>Fear of the Dark</h3>
+						<span class="subtitle">Quisque lobortis</span>
+					</div>	
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+					<a href="#">Read More</a>
+				</div>
+				
+				<div class="one-third last">
+					<div class="box-title">
+						<img class="box-icon" src="img/coffee.png" alt="image" />
+						<h3>Brave New World</h3>
+						<span class="subtitle">Quisque lobortis</span>
+					</div>	
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+					<a href="#">Read More</a>
+				</div>						
+				
+				<div class="clear"></div>
+				
+			</div><!-- end boxes -->			
+			
+			<div class="separator-line"></div>
+			
+			<div class="two-third">
+				<h3>Welcome to Temptation</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit.</p> 
+				<p>Donec vel sem nibh, eu aliquet leo. Praesent dapibus, massa euismod tempus scelerisque, ipsum tellus faucibus arcu, quis convallis diam justo vel lorem. </p> 					
+			</div>				
+				
+			<div class="one-third last">
+				<h3>Twitter Feed</h3>
+				<div id="twitter-feed"></div>					
+			</div>
+			
+			<div class="clear"></div>
+			
+		</div><!-- end home page -->			
+
+		
+	<!-- ABOUT PAGE -->
+		
+		
+		<div id="about" class="page">
+			<h2>About</h2>	
+			<p class="sub-title">Lorem ipsum dolor sit amet</p>
+			<div class="full-width">
+				<h3>Vestibulum Est</h3>
+				<p><img class="image-left" src="img/align.jpg" alt="Image description" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit. Donec vel sem nibh, eu aliquet leo. Praesent dapibus, massa euismod tempus scelerisque, ipsum tellus faucibus arcu, quis convallis diam justo vel lorem. Praesentet metus in ante placerat sodales. Vestibulum nec convallis metus.</p> 
+				<p>Suspendisse potenti. Aliquam vel faucibus lectus. Pellentesque consectetur placerat sem non tincidunt. Maecenas bibendum <a href="#">fermentum imperdiet.</a> Suspendisse turpis massa, aliquet ut semper sed, cursus in augue. Suspendisse potenti. Aliquam vel faucibus lectus. Pellente consectetur placerat sem non tincidunt. Maecenas bibendum fermentum imperdiet.</p>
+			</div>	
+					
+			<div class="full-width">
+				<h3>Praesent dapibus</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit. Donec vel sem nibh, eu aliquet leo. Praesent dapibus, massa euismod tempus scelerisque, ipsum tellus faucibus arcu, quis convallis diam justo vel lorem. Praesentet metus in ante placerat sodales. Vestibulum nec convallis metus.</p>
+				
+				<blockquote class="right">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit. </p>
+					<div class="author">John Doe <br /> Personalize, inc</div>
+				</blockquote>					
+					
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit. Donec vel sem nibh, eu aliquet leo. Praesent dapibus, massa euismod tempus scelerisque, ipsum tellus.</p>
+				<p>Faucibus arcu, quis convallis diam justo vel lorem. Praesentet metus in ante placerat sodales. Vestibulum nec convallis metus. Suspendisse potenti. Aliquam vel faucibus lectus. Pellentesque consectetur placerat sem non tincidunt. Maecenas bibendum fermentum imperdiet. Suspendisse turpis massa, aliquet ut semper sed.</p>				
+			</div>				
+			
+			<blockquote>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit. Donec vel sem nibh, eu aliquet leo. Praesent dapibus, massa euismod tempus scelerisque, ipsum tellus faucibus arcu, quis convallis diam justo vel lorem.</p>
+				<div class="author">John Doe, Personalize, inc</div>
+			</blockquote>
+			
+			<h3>Typography Examples</h3>
+
+			<div class="separator-line"></div>				
+														
+			<div class="toggles">
+				<div class="toggle-container full-width">						
+					<div class="toggle-header">
+						<h4>Typography - Grid</h4>
+						<a class="toggle-link toggle-open" href="#"></a>
+						<div class="clear"></div>
+					</div>
+					<div class="toggle-content">	
+						<div class="one-third">
+							<h3>One Third</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit.</p>
+						</div>
+						
+						<div class="one-third">
+							<h3>One Third</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit.</p>
+						</div>
+						
+						<div class="one-third last">
+							<h3>One Third Last</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit.</p>
+						</div>
+						
+						<div class="two-third">
+							<h3>Two Third</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit. Donec vel sem nibh, eu aliquet leo. Praesent dapibus, massa euismod tempus scelerisque, ipsum tellus faucibus arcu, quis convallis diam justo vel lorem.</p>
+						</div>
+						
+						<div class="one-third last">
+							<h3>One Third Last</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit.</p>
+						</div>
+						
+						<div class="one-half">
+							<h3>One Half</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit.</p>
+						</div>
+						
+						<div class="one-half last">
+							<h3>One Half Last</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit.</p>
+						</div>
+						
+						<div class="one-third">
+							<h3>One Third</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit.</p>
+						</div>
+						
+						<div class="two-third last">
+							<h3>Two Third Last</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit. Donec vel sem nibh, eu aliquet leo. Praesent dapibus, massa euismod tempus scelerisque, ipsum tellus faucibus arcu, quis convallis diam justo vel lorem.</p>
+						</div>
+												
+						<div class="clear"></div>
+						
+					</div><!-- end toggle-content -->
+				</div><!-- end toggle-container -->
+				
+				<div class="toggle-container full-width">						
+					<div class="toggle-header">
+						<h4>Typography - List styles</h4>
+						<a class="toggle-link toggle-open" href="#"></a>
+						<div class="clear"></div>
+					</div>
+					<div class="toggle-content">	
+						<div class="one-third">
+							<ul class="custom-list check">
+								<li>Consectetur adipiscing elit</li>
+								<li>Aliquam in justo a sapien </li>
+								<li>Massa euismod tempus</li>
+								<li>Feugiat sodales pretium</li>			
+							</ul>
+						</div>
+						
+						<div class="one-third">
+							<ul class="custom-list exclamation">
+								<li>Consectetur adipiscing elit</li>
+								<li>Massa euismod tempus</li>
+								<li>Aliquam in justo a sapien </li>
+								<li>Feugiat sodales pretium</li>											
+							</ul>
+						</div>
+						
+						<div class="one-third last">
+							<ul class="custom-list arrows">
+								<li>Consectetur adipiscing elit</li>
+								<li>Massa euismod tempus</li>
+								<li>Aliquam in justo a sapien </li>
+								<li>Feugiat sodales pretium</li>											
+							</ul>
+						</div>
+						
+						<div class="one-third">
+							<ol class="custom-list square">
+								<li>Consectetur adipiscing elit</li>
+								<li>Aliquam in justo a sapien </li>
+								<li>Massa euismod tempus</li>
+								<li>Feugiat sodales pretium</li>			
+							</ol>
+						</div>
+						
+						<div class="one-third">
+							<ol class="custom-list disc">
+								<li>Consectetur adipiscing elit</li>
+								<li>Massa euismod tempus</li>
+								<li>Aliquam in justo a sapien </li>
+								<li>Feugiat sodales pretium</li>											
+							</ol>
+						</div>
+						
+						<div class="one-third last">
+							<ol class="custom-list">
+								<li>Consectetur adipiscing elit</li>
+								<li>Massa euismod tempus</li>
+								<li>Aliquam in justo a sapien </li>
+								<li>Feugiat sodales pretium</li>											
+							</ol>
+						</div>
+						
+						<div class="clear"></div>
+					</div>
+				</div><!-- end toggle-container -->
+				
+				<div class="toggle-container full-width">
+					<div class="toggle-header">
+						<h4>Typography - Table</h4>
+						<a class="toggle-link toggle-open" href="#"></a>
+						<div class="clear"></div>
+					</div>
+					<div class="toggle-content">	
+					<table>							
+						<thead>
+						<tr><th>Name</th><th>Alias</th><th>Third Column</th></tr>
+						</thead>
+						<tbody>
+						<tr><td>Jennifer Kyrnin</td><td>Richard Miles</td><td>Web Design / HTML Guide</td></tr>
+						<tr class="even"><td>Mark Kyrnin</td><td>PC Hardware / Reviews Guide</td><td>Richard Miles</td></tr>
+						<tr><td>Shasta</td><td>Richard Miles</td><td>Moe</td></tr>
+						<tr class="even"><td>McKinley</td><td>Kinkin</td><td>Richard Miles</td></tr>
+						<tr><td>Jennifer Kyrnin</td><td>Richard Miles</td><td>Web Design / HTML Guide</td></tr>
+						<tr class="even"><td>Mark Kyrnin</td><td>PC Hardware / Reviews Guide</td><td>Richard Miles</td></tr>
+						</tbody>
+					</table>
+					</div>
+				</div><!-- end toggle-container -->	
+				
+				<div class="toggle-container full-width">
+					<div class="toggle-header">
+						<h4>List of All the Box Icons</h4>
+						<a class="toggle-link toggle-open" href="#"></a>
+						<div class="clear"></div>
+					</div>
+					<div class="toggle-content">	
+						<ul class="box-icons-preview">
+							<li><img src="img/bagel.png" alt="box icon" /></li>
+							<li><img src="img/cogs.png" alt="box icon" /></li>
+							<li><img src="img/globe.png" alt="box icon" /></li>
+							<li><img src="img/keychain.png" alt="box icon" /></li>
+							<li><img src="img/monitor.png" alt="box icon" /></li>
+							<li><img src="img/portrait.png" alt="box icon" /></li>
+							<li><img src="img/star.png" alt="box icon" /></li>
+							<li><img src="img/truck.png" alt="box icon" /></li>
+							<li><img src="img/camera.png" alt="box icon" /></li>
+							<li><img src="img/coins.png" alt="box icon" /></li>
+							<li><img src="img/guitar.png" alt="box icon" /></li>
+							<li><img src="img/magnifier.png" alt="box icon" /></li>
+							<li><img src="img/music.png" alt="box icon" /></li>
+							<li><img src="img/sun.png" alt="box icon" /></li>
+							<li><img src="img/screwdriver.png" alt="box icon" /></li>
+							<li><img src="img/tent.png" alt="box icon" /></li>
+							<li><img src="img/wrench2.png" alt="box icon" /></li>
+							<li><img src="img/cart.png" alt="box icon" /></li>
+							<li><img src="img/dices.png" alt="box icon" /></li>
+							<li><img src="img/home.png" alt="box icon" /></li>
+							<li><img src="img/mailbox.png" alt="box icon" /></li>
+							<li><img src="img/note.png" alt="box icon" /></li>
+							<li><img src="img/speaker.png" alt="box icon" /></li>
+							<li><img src="img/thumbup.png" alt="box icon" /></li>
+							<li><img src="img/coffee.png" alt="box icon" /></li>
+							<li><img src="img/flame.png" alt="box icon" /></li>
+							<li><img src="img/key.png" alt="box icon" /></li>
+							<li><img src="img/mobile.png" alt="box icon" /></li>
+							<li><img src="img/phone.png" alt="box icon" /></li>
+							<li><img src="img/wrench.png" alt="box icon" /></li>	
+						</ul>
+					</div>
+				</div><!-- end toggle-container -->	
+				
+			</div><!-- end toggles -->
+			
+		</div><!-- end about page -->					
+		
+		
+	<!-- PORTFOLIO PAGE -->	
+		
+		
+		<div id="portfolio" class="page">
+		
+			<h2>Project Showcase</h2>
+			<p class="sub-title">Lorem ipsum dolor sit amet</p>
+			
+			<div id="portfolio-content" class="js-off-overflow">	
+
+				<!-- portfolio page 1 -->
+					<ul id="page1" class="portfolio-thumbs">
+						<li>
+							<a href="img/001.jpg"><img src="img/001.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Image File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="zoom-btn" href="img/001.jpg" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/002.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Video File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="play-btn" href="http://www.youtube.com/watch?v=okISRer6g28" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/003.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Image File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="zoom-btn" href="img/001.jpg" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/002.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Image File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="zoom-btn" href="img/001.jpg" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/003.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Image File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="zoom-btn" href="img/001.jpg" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/001.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Video File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="play-btn" href="http://vimeo.com/18046748" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/003.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Video File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="play-btn" href="http://www.youtube.com/watch?v=okISRer6g28" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/001.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Image File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="zoom-btn" href="img/001.jpg" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/002.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Image File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="zoom-btn" href="img/001.jpg" rel="prettyPhoto"></a>
+							</div>
+						</li>
+					</ul>	
+					
+				
+				
+				
+				<!-- portfolio page 2 -->						
+					<ul id="page2" class="portfolio-thumbs js-off-position">
+						<li>
+							<a href="img/001.jpg"><img src="img/002.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Image File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="zoom-btn" href="img/001.jpg" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/003.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Video File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="play-btn" href="http://www.youtube.com/watch?v=okISRer6g28" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/001.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Image File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="zoom-btn" href="img/001.jpg" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/001.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Image File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="zoom-btn" href="img/001.jpg" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/002.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Image File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="zoom-btn" href="img/001.jpg" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/003.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Video File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="play-btn" href="http://vimeo.com/18046748" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/002.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Video File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="play-btn" href="http://www.youtube.com/watch?v=okISRer6g28" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/003.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Image File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="zoom-btn" href="img/001.jpg" rel="prettyPhoto"></a>
+							</div>
+						</li>
+						<li>
+							<a href="img/001.jpg"><img src="img/001.jpg" alt="Image description" /></a>
+							<div class="overlay">
+								<h5>Preview Image File</h5>
+								<p>Integer ac massa tellus. Maecenas vitae ante leo, eu lacininulla. Quisque lobortis sodales tempus. </p>
+								<a href="#">http://www.loremipsum.com</a>
+								<a class="zoom-btn" href="img/001.jpg" rel="prettyPhoto"></a>
+							</div>
+						</li>
+					</ul>											
+				
+			</div><!-- end portfolio-content-->	
+			
+			<ul class="portfolio-nav">
+				<li><a class="current" href="#">1</a></li>
+				<li><a href="#">2</a></li>
+			</ul>
+			
+			<div class="clear"></div>				
+			
+		</div><!-- end portfolio page -->
+		
+		
+	<!-- BLOG PAGE -->	
+		
+		
+		<div id="blog" class="page">
+			<h2>Latest From The Blog</h2>
+			<p class="sub-title">Lorem ipsum dolor sit amet</p>
+			
+			<div class="blog-post">
+				<div class="post-title">
+					<h3><a href="blog-single-post.html">Integer Ac Massa</a></h3>
+					<div class="post-metadata">
+						<p>posted on April 6th, 2011 by <a href="#">John Doe</a> in <a href="#">Category</a> with <a href="#">2 comments</a></p>
+					</div><!-- end post-metadata -->											
+				</div><!-- end post-title -->
+				
+				<div class="post-content">
+					<img src="img/blog/post-1.jpg" alt="Image Description" />
+					<p>Vivamus sit amet odio pellentesque odio faucibus tristique. Morbi facilisis, ligula a faucibus pellentesque, orci justo consequat massa, sit amet dapibus dolor diam viverra mi. Aenean porttitor, lectus at dapibus egestas, tellus ipsum rhoncus orci, eu vestibulum nisi orci quis nunc. Vivamus sit amet odio pellentesque odio faucibus tristique. Morbi facilisis, ligula a faucibus pellentesque, orci justo consequat massa, sit amet dapibus.</p>
+					<a class="post-more-link" href="blog-single-post.html">Continue reading</a>
+				</div><!-- end post-content -->
+			</div><!-- end blog-post -->
+			
+			<div class="separator-line"></div>
+			
+			<div class="blog-post">
+				<div class="post-title">
+					<h3><a href="#">Faucibus Pellentesque</a></h3>
+					<div class="post-metadata">
+						<p>posted April 2th, 2011 by <a href="#">John Doe</a> in <a href="#">Category</a> with <a href="#">5 comments</a></p>
+					</div><!-- end post-metadata -->
+				</div><!-- end post-title -->
+				
+				<div class="post-content">
+					
+					<p><img class="image-left" src="img/align.jpg" alt="Image description" />Vivamus sit amet odio pellentesque odio faucibus tristique. Morbi facilisis, ligula a faucibus pellentesque, orci justo consequat massa, sit amet dapibus dolor diam viverra mi. Aenean porttitor, lectus at dapibus egestas, tellus ipsum rhoncus orci, eu vestibulum nisi orci quis nunc. Vivamus sit amet odio pellentesque odio faucibus tristique. Morbi facilisis, ligula a faucibus pellentesque, orci justo consequat massa, sit amet dapibus.</p>
+					<p>Vivamus sit amet odio pellentesque odio faucibus tristique. Morbi facilisis, ligula a faucibus pellentesque, orci justo consequat massa, sit amet dapibus dolor diam viverra mi. Aenean porttitor, lectus at dapibus egestas, tellus ipsum rhoncus orci, eu vestibulum nisi orci quis nunc. Vivamus sit amet odio pellentesque odio faucibus tristique. Morbi facilisis, ligula a faucibus pellentesque, orci justo consequat massa, sit amet dapibus.</p>
+					<a class="post-more-link" href="#">Continue reading</a>
+				</div><!-- end post-content -->
+			</div><!-- end blog-post -->
+			
+			<div class="separator-line"></div>
+			
+			<div class="blog-post">
+				<div class="post-title">
+					<h3><a href="#">Vivamus Sit Amet</a></h3>
+					<div class="post-metadata">
+						<p>posted by March 30th, 2011 <a href="#">John Doe</a> in <a href="#">Category</a> with <a href="#">0 comments</a></p>
+					</div><!-- end post-metadata -->
+				</div><!-- end post-title -->
+				
+				<div class="post-content">
+					<img src="img/blog/post-3.jpg" alt="Image Description" />
+					<p>Vivamus sit amet odio pellentesque odio faucibus tristique. Morbi facilisis, ligula a faucibus pellentesque, orci justo consequat massa, sit amet dapibus dolor diam viverra mi. Aenean porttitor, lectus at dapibus egestas, tellus ipsum rhoncus orci, eu vestibulum nisi orci quis nunc. Vivamus sit amet odio pellentesque odio faucibus tristique. Morbi facilisis, ligula a faucibus pellentesque, orci justo consequat massa, sit amet dapibus.</p>
+					<a class="post-more-link" href="#">Continue reading</a>
+				</div><!-- end post-content -->
+			</div><!-- end blog-post -->
+		</div><!-- end blog page -->
+				
+		
+	<!-- CONTACT PAGE -->	
+		
+		
+		<div id="contact" class="page">
+			<h2>Contact</h2>
+			<p class="sub-title">Lorem ipsum dolor sit amet</p>
+			
+			<div class="two-third">
+				<h3>Drop us a line</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sollicitudin justo ut lacus laoreet congue. Maecenas vel velit augue.</p>
+				
+				<form id="contact_form" method="post" action="submitemail.php">						
+					<label for="name">Name:</label><input  class="textbox" type="text" name="name" id="name" />
+					<label for="email">E-mail:</label><input  class="textbox" type="text" name="email" id="email" />
+					<label for="subject">Subject:</label><input  class="textbox" type="text" name="subject" id="subject" />
+					<label for="message">Message:</label><textarea class="textbox" name="message" id="message" rows="" cols=""></textarea>
+					<input type="submit" name="submit" value="Send Message" id="submit" /> <br />
+					<p id="message-outcome"></p>
+				</form>
+				
+			</div>
+			
+			<div class="one-third last">				
+				<h3>Contact info</h3>
+				<p>
+					Name of the street 123/4 <br />
+					Name of the City <br />
+					Name of the Country <br />
+				</p>
+				
+				<p>
+					Phone: +321 123 456 7 <br />
+					Fax: +321 123 456 7 <br />
+					E-mail: <a href="#">johndoe@ipsum.com</a> <br />
+					Website: <a href="#">www.loremipsum.com</a> <br />
+				</p>
+				
+				<div class="social-networks">
+					<h3>Around the internet</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>	
+					<ul class="social-links">
+						<li class="facebook"><a href="#">Facebook</a></li>
+						<li class="vimeo"><a href="#">Vimeo</a></li>
+						<li class="twitter"><a href="#">Twitter</a></li>
+						<li class="lastfm"><a href="#">Last fm</a></li>
+						<li class="skype"><a href="#">Skype</a></li>
+						<li class="yahoo"><a href="#">Yahoo</a></li>
+						<li class="tumblr"><a href="#">Tumblr</a></li>
+						<li class="delicious"><a href="#">Delicious</a></li>
+						<li class="forrst"><a href="#">Forrst</a></li>
+						<li class="reddit"><a href="#">Reddit</a></li>														
+					</ul>
+				</div><!-- end social-networks -->
+			</div>
+			
+			<div class="clear"></div>
+			
+			<div class="separator-line"></div>
+			
+			<div class="full-width">
+				<h3>Locate us easily</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sollicitudin justo ut lacus laoreet congue.</p>
+				
+				<div id="google-map">
+					<iframe width="596" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Smederevska+Palanka,+Central+Serbia&amp;aq=1&amp;sll=38.918167,-97.209177&amp;sspn=0.013239,0.031478&amp;ie=UTF8&amp;hq=&amp;hnear=Smederevska+Palanka,+Central+Serbia,+Serbia&amp;ll=44.362029,20.961227&amp;spn=0.015341,0.033216&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+				</div>
+				
+			</div>			
+			
+			<div class="clear"></div>				
+		
+		</div><!-- end contact page -->
+
+	</div><!-- end right -->	
+</body>
+
+</html>

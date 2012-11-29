@@ -4,6 +4,8 @@ import sys
 from PyQt4 import QtGui, QtCore
 import shutil
 import json
+import make_html
+import check_link
 
 structArr = {
     'people': {
@@ -124,14 +126,21 @@ class MainWin(QtGui.QWidget):
           temp[tt] = []
         self.dataArr[t] = temp
     
-    print json.dumps(self.dataArr)
+    # print json.dumps(self.dataArr)
 
 
   def saveData(self):
-    shutil.copy2(FILE_NAME, BACKUP_NAME)
+    try:
+      shutil.copy2(FILE_NAME, BACKUP_NAME)
+    except:
+      print 'Skip backup: no old data file detected.'
     with open(FILE_NAME, 'w') as output:
       json.dump(self.dataArr, output)
 
+
+  def makeHtml(self):
+     make_html.gen_html(self.dataArr)
+      
 
   def initUI(self):
     topLayout = QtGui.QGridLayout(self)
@@ -154,9 +163,15 @@ class MainWin(QtGui.QWidget):
     self.listDetail.setSpacing(10)
     topLayout.addLayout(self.listDetail, 0, 3, 1, 1)
 
-    saveFileButton = QtGui.QPushButton("Save All")
+    saveFileButton = QtGui.QPushButton("Save File")
     saveFileButton.clicked.connect(self._slotSaveFileClicked)
-    topLayout.addWidget(saveFileButton, 1, 0, 1, 1)
+    htmlFileButton = QtGui.QPushButton("Make Html")
+    htmlFileButton.clicked.connect(self._slotGenHtmlClicked)
+    
+    vbox = QtGui.QVBoxLayout()
+    vbox.addWidget(saveFileButton)
+    vbox.addWidget(htmlFileButton)
+    topLayout.addLayout(vbox, 1, 0, 1, 1)
 
     addButton = QtGui.QPushButton("Add")
     delButton = QtGui.QPushButton("Delete")
@@ -325,6 +340,10 @@ class MainWin(QtGui.QWidget):
         "Data saved to %s\nBackup data saved to %s" % (FILE_NAME, BACKUP_NAME),
         QtGui.QMessageBox.Yes)
 
+
+  def _slotGenHtmlClicked(self):
+    self.makeHtml()
+        
 
   def _slotSaveClicked(self):
     data = {}
