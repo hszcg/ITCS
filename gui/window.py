@@ -8,6 +8,11 @@ import make_html
 import check_link
 
 structArr = {
+    'home': {
+      'counter': [
+        {'id':'code', 'tip':'Enter&nbsp;Code&nbsp;Here.', 'size': 20},
+        ],
+      },
     'people': {
       'counter': [
         {'id':'code', 'tip':'Enter&nbsp;Code&nbsp;Here.', 'size': 20},
@@ -90,7 +95,7 @@ structArr = {
         {'id':'url', 'tip':'http://link.com', 'size': 1},
         {'id':'description', 'tip':'blabla', 'size': 10},
         ],
-      'slide_files': [
+      'slide': [
         {'id':'title', 'tip':'blabla', 'size': 2},
         {'id':'date', 'tip':'January&nbsp;1,&nbsp;2013', 'size': 1},
         {'id':'url', 'tip':'http://link.com', 'size': 1},
@@ -350,8 +355,8 @@ class MainWin(QtGui.QWidget):
     index = 0
     for t in self.template:
       textItem = self.dataList[index]
-      text = str(textItem.toPlainText())
-      data[t['id']] = text
+      text = unicode(textItem.toPlainText())
+      data[t['id']] = text.strip()
       index += 1
 
     index = self.listC.currentRow()
