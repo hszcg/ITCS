@@ -217,7 +217,8 @@ def gen_body_seminars(p, data):
     hstr += '<p class="details">%s</p>' % t['speaker_bio']
     if t['urls'] != '':
       hstr += '<li style="margin-top: 5px;">Links</li>'
-      hstr += '<p class="details">%s</p>' % t['urls']
+      for u in t['urls'].split(','):
+        hstr += '<p class="details"><a href="%s" target="_blank">%s</a></p>' % (u, u)
     hstr += '</div>'
     
     hstr += '<div class="clear"></div>'
