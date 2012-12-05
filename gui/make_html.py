@@ -14,7 +14,7 @@ FILE_NAME_ARR = [
     {'id': 'projects', 'name': 'Projects', 'link': 'projects.html'},
     {'id': 'papers', 'name': 'Papers/Resources', 'link': 'papers.html'},
     ]
-HOME_LIMIT = 3
+HOME_LIMIT = 1
 PAGE_LIMIT = 10
 
 
@@ -284,6 +284,7 @@ def gen_body_papers(p, data):
       <h3>Papers/Resources</h3>
         <div class="cat-btn">
           <button id="papers-btn" class="tag" onclick="item_filter('papers')">Papers</button>
+          <button id="unrefer-btn" class="tag" onclick="item_filter('unrefer')">Unrefereed</button>
           <button id="videos-btn" class="tag" onclick="item_filter('videos')">Videos</button>
           <button id="slides-btn" class="tag" onclick="item_filter('slides')">Slides</button>
         </div>
@@ -291,6 +292,7 @@ def gen_body_papers(p, data):
         <div class="full-width">
         <div class="separator-line"></div>
       '''
+  # Papers
   index = 0
   c_n = 0
   for t in data['papers']['paper']:
@@ -299,7 +301,13 @@ def gen_body_papers(p, data):
     hstr += '<div class="box-title papers" value="%s">' % index
     hstr += '<div style="min-height: 120px; margin-top: 5px;">'
     hstr += '<h4 class="bg-red">%s</h4>' % t['title']
-    hstr += '<p class="title">%s</p>' % t['author']
+    temp_arr = []
+    for tt in t['author'].split(','):
+      if '#' in tt:
+        temp_arr.append('<a href="%s" target=_blank >%s</a>' % (tt.split('#')[1], tt.split('#')[0]))
+      else:
+        temp_arr.append(tt)
+    hstr += '<p class="title">%s</p>' % (', '.join(temp_arr))
     if t['venue'] != '' and t['date'] != '':
       hstr += '<p class="title">%s, %s</p>' % (t['venue'], t['date'])
 
@@ -314,7 +322,7 @@ def gen_body_papers(p, data):
     
     hstr += '<div id="basic-modal-content-det-%d" class="basic-modal-hide">' % index
     hstr += '<h4>%s</h4>' % t['title']
-    hstr += '<p class="title">%s</p>' % t['author']
+    hstr += '<p class="title">%s</p>' % (', '.join(temp_arr))
     if t['venue'] != '' and t['date'] != '':
       hstr += '<p class="title">%s, %s</p>' % (t['venue'], t['date'])
     hstr += '<li style="margin-top: 5px;">Abstract</li>'
@@ -333,6 +341,63 @@ def gen_body_papers(p, data):
     index += 1
     c_n += 1
 
+  # Unrefereed
+  index = 0
+  c_n = 0
+  for t in data['papers']['unrefer']:
+    if t == []:
+      continue
+    hstr += '<div class="box-title unrefer" value="%s">' % index
+    hstr += '<div style="min-height: 120px; margin-top: 5px;">'
+    hstr += '<h4 class="bg-red">%s</h4>' % t['title']
+    temp_arr = []
+    for tt in t['author'].split(','):
+      if '#' in tt:
+        temp_arr.append('<a href="%s" target=_blank >%s</a>' % (tt.split('#')[1], tt.split('#')[0]))
+      else:
+        temp_arr.append(tt)
+    hstr += '<p class="title">%s</p>' % (', '.join(temp_arr))
+    if t['venue'] != '' and t['date'] != '':
+      hstr += '<p class="title">%s, %s</p>' % (t['venue'], t['date'])
+
+    hstr += '<div class="cat-btn">'
+    if t['paper_url'] != '':
+      hstr += '<button onclick="window.open(\'%s\');">Paper</button>' % t['paper_url']
+    if t['fullpaper_url'] != '':
+      hstr += '<button onclick="window.open(\'%s\');">Full Paper</button>' % t['fullpaper_url']
+    hstr += '<button class="basic-modal" value="det-%d">Details</button>' % index
+    hstr += '<button class="basic-modal" value="bib-%d">Bibtex</button>' % index
+    hstr += '</div>'
+    
+    hstr += '<div id="basic-modal-content-det-%d" class="basic-modal-hide">' % index
+    hstr += '<h4>%s</h4>' % t['title']
+    hstr += '<p class="title">%s</p>' % (', '.join(temp_arr))
+    if t['venue'] != '' and t['date'] != '':
+      hstr += '<p class="title">%s, %s</p>' % (t['venue'], t['date'])
+    hstr += '<li style="margin-top: 5px;">Abstract</li>'
+    hstr += '<p class="details">%s</p>' % t['abstract']
+    hstr += '</div>'
+    
+    hstr += '<div id="basic-modal-content-bib-%d" class="basic-modal-hide">' % index
+    hstr += '<li style="margin-top: 5px;">Bibtex</li>'
+    hstr += '<p class="details">%s</p>' % t['bibtex']
+    hstr += '</div>'
+
+    hstr += '</div>'
+    hstr += '<div class="clear"></div>'
+    hstr += '<div class="dashed-line-h"></div>'
+    hstr += '</div>'
+    index += 1
+    c_n += 1
+  
+  if c_n == 0:
+    hstr += '<div class="box-title unrefer" value="%s">' % index
+    hstr += '<h4 class="bg-red">This page is under construction -- entering paper details</h4>'
+    hstr += '<div class="clear"></div>'
+    hstr += '<div class="dashed-line-h"></div>'
+    hstr += '</div>'
+
+  # Videos
   c_n = 0
   for t in data['papers']['video']:
     if t == []:
@@ -370,6 +435,7 @@ def gen_body_papers(p, data):
     hstr += '<div class="dashed-line-h"></div>'
     hstr += '</div>'
 
+  # Slides
   c_n = 0
   for t in data['papers']['slide']:
     if t == []:
@@ -605,7 +671,7 @@ def gen_footer(p, data):
         '''
       <div class="clear"></div>
       <div class="separator-line" style="margin-top: -5px"></div> 
-      <p align="center">Copyright &copy; IIIS, Tsinghua University. All rights reserved.</a></p>
+      <p align="center">Copyright &copy; 2012 IIIS, Tsinghua University. All rights reserved.</a></p>
       </div>
     </div><!-- end home page -->
   </div><!-- end right -->  
@@ -616,7 +682,7 @@ def gen_footer(p, data):
       <div class="clear"></div>
       <div class="separator-line"></div>
       <img src="img/logo3.png" align="right" style="width: 80px; margin-top: -10px; margin-left: -80px;" alt="ITCS" />
-      <p align="center">Copyright &copy; IIIS, Tsinghua University. All rights reserved.</a></p>
+      <p align="center">Copyright &copy; 2012 IIIS, Tsinghua University. All rights reserved.</a></p>
     </div><!-- end home page -->
   </div><!-- end right -->  
         '''
