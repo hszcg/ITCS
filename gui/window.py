@@ -24,7 +24,7 @@ structArr = {
         {'id':'homepage', 'tip':'http://itcs.tsinghua.edu.cn/guangyang/', 'size': 2},
         {'id':'interest', 'tip':'Cryptography,&nbsp;Derandomization', 'size': 1},
         {'id':'details', 'tip':'blah&nbsp;blah&nbsp;this&nbsp;may&nbsp;include&nbsp;HTML&nbsp;links&nbsp;and&nbsp;tags', 'size': 8},
-        {'id':'photo', 'tip':'image/guangyang.jpg', 'size': 1},
+        {'id':'photo', 'tip':'image/guangyang.jpg', 'size': -1},
         ],
       'former_member': [
         {'id':'name', 'tip':'Wei&nbsp;Yu', 'size': 1},
@@ -33,7 +33,7 @@ structArr = {
         {'id':'current_homepage', 'tip':'http://pure.au.dk/portal/en/persons/id(f644ac9a-1af0-4ebc-863c-d9e909fbae5f).html', 'size': 2},
         {'id':'interest', 'tip':'Joking', 'size': 1},
         {'id':'details', 'tip':'blah&nbsp;blah&nbsp;this&nbsp;may&nbsp;include&nbsp;HTML&nbsp;links&nbsp;and&nbsp;tags', 'size': 8},
-        {'id':'photo', 'tip':'image/weiyu.jpg', 'size': 1},
+        {'id':'photo', 'tip':'image/weiyu.jpg', 'size': -1},
         ],
       },
     'announcements': {
@@ -62,7 +62,7 @@ structArr = {
         {'id':'speaker', 'tip':'Bangsheng&nbsp;Tang', 'size': 1},
         {'id':'speaker_homepage', 'tip':'http://link.com', 'size': 1},
         {'id':'speaker_bio', 'tip':'blabla', 'size': 5},
-        {'id':'speaker_photo', 'tip':'image/weiyu.jpg', 'size': 1},
+        {'id':'speaker_photo', 'tip':'image/weiyu.jpg', 'size': -1},
         ],
       },
     'projects': {
@@ -117,6 +117,7 @@ structArr = {
 
 FILE_NAME = 'data.json'
 BACKUP_NAME = 'data.json.bak'
+IMG_DIR = '../html/img/'
 
 
 class MainWin(QtGui.QWidget):
@@ -249,13 +250,44 @@ class MainWin(QtGui.QWidget):
       text = ''
       if t['id'] in data.keys():
         text = data[t['id']]
-      textItem = QtGui.QTextEdit(text)
-      textItem.setMaximumHeight(labelItem.sizeHint().height() * t['size'])
-      textItem.setToolTip("<a style='font-size: 14px'>%s</a>" % t['tip'])
+      textItem = QtGui.QTextEdit()
+      textItem.setPlainText(text)
+      if t['size'] > 0:
+        textItem.setMaximumHeight(labelItem.sizeHint().height() * t['size'])
+        textItem.setToolTip("<a style='font-size: 14px'>%s</a>" % t['tip'])
+        self.listDetail.addWidget(textItem, index, 1)
+        self.imgPathItem = None
+      else:
+        textItem.setMaximumHeight(labelItem.sizeHint().height() * 3)
+        openButton = QtGui.QPushButton("Open")
+        openButton.clicked.connect(self._slotOpenClicked)
+        self.listDetail.addWidget(textItem, index, 1)
+        self.listDetail.addWidget(openButton, index, 2)
+        self.imgPathItem = textItem
       self.dataList.append(textItem)
-      self.listDetail.addWidget(textItem, index, 1)
       index += 1
-    
+  
+
+  def _slotOpenClicked(self, item):
+    fileName = QtGui.QFileDialog.getOpenFileName(
+        self,self.tr("Open Image"), '',
+        self.tr("Image Files(*.png *.jpg *.jpeg *.bmp)"))
+    if fileName == '':
+      return
+    fileInfo = QtCore.QFileInfo(fileName)
+    base = unicode(fileInfo.baseName())
+    ext = unicode(fileInfo.completeSuffix())
+    index = 0
+    while True:
+      tarName = "%s%s/%s%d.%s" % (IMG_DIR, self.keyA, base, index, ext)
+      print tarName
+      tarInfo = QtCore.QFileInfo(tarName)
+      if tarInfo.exists() != True:
+        break
+      index += 1
+    shutil.copy2(fileName, tarName)
+    self.imgPathItem.setPlainText(tarName)
+
 
   def _itemAClicked(self, item):
     self.listB.clear()

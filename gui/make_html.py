@@ -113,11 +113,11 @@ def gen_body_people(p, data):
   if data['people']['former_member'] != []:
     hstr += \
         '''
-        <div class="cat-btn" style="display: none;">
+        <div class="cat-btn"">
            <button onclick="show_member()">Former Members</button>
         </div>
         '''
-    hstr += '<div id="former-member: style="display: none;">'
+    hstr += '<div id="former-member" style="display: none;">'
     hstr += '<h4>Former Members</h4>'
     for t in data['people']['former_member']:
       if t == []:
