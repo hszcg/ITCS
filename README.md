@@ -17,10 +17,10 @@ Including Content Management Tools and HTML Auto-generation Tools from JSON data
 gui/
 
 + **Usage**
-'''
+```
 $ cd gui/
 $ python window.py 
-'''
+```
 
 + **Operations**
 * On initialization, program will automatically load data from "gui/data.json".
@@ -35,7 +35,8 @@ $ python window.py
 gui/data.json 
 
 + **Data Format**
-JSON Format, Level 1 key is 
+JSON Format, Level 1 key is in the left column, Level 2 key is in the middle column, Level 3 list is in the right column.
+And for each item, the property name is the key, and the content is the value.
 
 
 ## Deploy
@@ -48,9 +49,9 @@ Data is automatically backup from "gui/data.json" to "gui/data.json.bak"
 
 + **HTML Backup**
 HTML is backup from "html/" to "html_bak/"
-'''
+```
 $ ./backup.sh 
-'''
+```
 
 
 ## Others
