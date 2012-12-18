@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>RC3/IIIS - Tsinghua Univ.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+<script type='text/javascript' src='js/basic.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/dblue.css" media="screen" />
+<link rel='stylesheet' type='text/css' href='css/basic.css' media='screen' />
+
+<!--[if IE 7]>
+<link type="text/css" href="css/ie7.css" rel="stylesheet" media="screen" />
+<![endif]-->
+<!--[if lt IE 7]>
+<link type='text/css' href='css/basic_ie.css' rel='stylesheet' media='screen' />
+<![endif]-->
+  
+<script type="text/javascript">
+  var cur_page = 1;
+  var total_page = 1;
+  $(document).ready(function()
+  {
+    makefoot();
+  });
+
+  function makefoot()
+  {
+    total_page = Math.ceil($('.box-title').size()/10);
+    var str = '';
+    for (var i=1; i<=total_page; i++)
+    { 
+      str += '<a onclick="gotopage('+i+')" style="margin-left: 8px;" href="#">'+i+'</a>';
+    }
+    $('#foot_number').html(str);
+    gotopage(1);
+  }
+
+  function shiftpage(value)
+  {
+    gotopage(value + cur_page);
+  }
+  
+  function gotopage(value)
+  {
+    if (value <= 0)
+      value = 1;
+    if (value > total_page)
+      value = total_page;
+    $('.box-title').hide();
+    $('.box-title').slice(value*10-10, value*10).show();
+    $('#foot_number a').eq(cur_page-1).css('font-weight', 'normal')
+    $('#foot_number a').eq(value-1).css('font-weight', 'bold')
+    cur_page = value;
+  }
+</script>
+    
+</head>
+<body>
+  <div id="left" class="plates">
+    <ul id="navigation">
+      <li><a href="index.html">Home</a></li><li><a href="people.html">People</a></li><li><a href="announcements.html">Announcements</a></li><li><a class="active"href="seminars.html">Seminars</a></li><li><a href="projects.html">Projects</a></li><li><a href="papers.html">Papers/Resources</a></li>
+    </ul>
+  </div><!-- end left --> 
+  
+  <div id="right" class="square-grid">
+    <div id="home" class="page">
+      <div style="min-height: 50px;">
+        <img src="img/logo.png" align="left" style="width: 150px;" alt="ITCS" />
+        <h2>Laboratory For The Study of <font class='red'>R</font>andomness</h2>
+        <br>
+        <h2>in <font class='red'>C</font>omputation and <font class='red'>C</font>ryptographic <font class='red'>C</font>omplexity</h2>
+      </div>
+      <div class="separator-line"></div>  
+      
+      <h3>Seminars</h3>
+      <div class="boxes">
+        <div class="full-width">
+      <div class="box-title" value="0"><h4 class="bg-red">Introduction to Algorithmic Randomness</h4><p class="title">Tuesday January 1, 2013</p><p class="title">Speaker: <a href="http://www.barmpalias.net/" target="_blank">George Barmpalias</a></p><p class="title">Place: 1-222 FIT Building, Time: 12 pm</p><div class="cat-btn"><button class="basic-modal" value="det-0">Details</button></div><div id="basic-modal-content-det-0" class="basic-modal-hide"><img src="img/seminars/George_Barmpalias.JPG" align="right" width="150px" style="margin-right: 20px;"/><h4>Introduction to Algorithmic Randomness</h4><p class="title">Tuesday January 1, 2013</p><p class="title">Speaker: <a href="http://www.barmpalias.net/" target="_blank">George Barmpalias</a></p><p class="title">Place: 1-222 FIT Building, Time: 12 pm</p><li style="margin-top: 5px;">Abstract</li><p class="details">In this short 3-lecture course I will discuss the subject of
+Algorithmic randomness and in particular the mathematical theory that stems from the
+following questions and notions:<br>
+<br>
+- What do we mean by randomness?<br>
+- how can we define randomness?<br>
+- Focus on binary sequences: finite/infinite<br>
+- Randomness/coding information relationships<br>
+- The other end: anti-randomness<br>
+- Which sequence is more random?<br>
+<br>
+I will start with the foundations of algorithmic randomness
+(Kolmogorov, Solomonoff, Levin, Chaitin) and proceed
+to a number of interesting results, most of them quite recent. I will
+not always follow the historical order of events
+and the style will be rather informal, like telling a story and
+focussing on the bits I personally find interesting and know
+more about. I will not talk about pseudo-randomness, but rather about
+stronger forms of randomness (quite a few of them). I will talk about
+randomness of binary strings and infinite binary sequences, and focus
+on the latter. Randomness of other mathematical objects can be defined
+accordingly through standard coding.<br>
+<br>
+In the first lecture I will focus on motivating and presenting the
+mathematical foundations of the theory, along with occasional key
+results. The theme of the second lecture will be computational lowness
+(or anti-randomness) which
+is a rather popular theme in this area nowadays. In the final lecture
+I will talk about measures of complexity that compare infinite
+sequences according to how random they are.<br>
+<br>
+I will try to keep the lectures reasonably self-contained so that
+people can drop in after having missed a lecture.<br>
+<br>
+Some encyclopaedic texts on the subject are:<br>
+<p class='link'><a href='http://www.amazon.com/Computability-Randomness-Oxford-Logic-Guides/dp/0199652600' target="_blank">http://www.amazon.com/Computability-Randomness-Oxford-Logic-Guides/dp/0199652600</a></p>
+
+<p class='link'><a href='http://www.amazon.com/Algorithmic-Randomness-Complexity-Applications-Computability/dp/0387955674' target="_blank">http://www.amazon.com/Algorithmic-Randomness-Complexity-Applications-Computability/dp/0387955674</a></p>
+
+<p class='link'><a href='http://www.amazon.com/Introduction-Kolmogorov-Complexity-Applications-Computer/dp/0387339981' target="_blank">http://www.amazon.com/Introduction-Kolmogorov-Complexity-Applications-Computer/dp/0387339981</a></p>
+A few of the results I will present are too recent to be found in
+these books, but references to papers
+will be given upon request.</p><li style="margin-top: 5px;">Bio</li><p class="details">I got my PhD from the University of Leeds in 2004. I have worked in Computability theory and algorithmic randomness and have published 50 articles in journals and conference proceedings. I have worked and taught in the University of Leeds, Victoria university of Wellington in New Zealand, University of Amsterdam and currently I work in the Chinese Academy of Sciences, Institute of Software. My new interest is the study of probabilistic models of networks and the associated phase transitions.</p></div><div class="clear"></div><div class="dashed-line-h"></div></div>
+          <div id='foot' align="center" style="margin-top: 10px;">
+            <a onclick='gotopage(1);' href='#'><img src="img/button/first.png"/></a>
+            <a onclick='shiftpage(-1);' href='#'><img src="img/button/prev.png" style="margin-left: 8px;"/></a>
+            <div id='foot_number' style="display: inline;"></div>
+            <a onclick='shiftpage(1);' href='#'><img src="img/button/next.png" style="margin-left: 8px;"/></a>
+            <a onclick='gotopage(total_page);' href='#'><img src="img/button/last.png" style="margin-left: 8px;"/></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="clear"></div>
+      <div class="separator-line"></div>
+      <img src="img/logo3.png" align="right" style="width: 80px; margin-top: -10px; margin-left: -80px;" alt="ITCS" />
+      <p align="center">Copyright &copy; 2012 IIIS, Tsinghua University. All rights reserved.</a></p>
+    </div><!-- end home page -->
+  </div><!-- end right -->  
+        </body></html>

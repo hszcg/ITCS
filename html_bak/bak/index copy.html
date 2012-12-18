@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ITCS - Tsinghua Univ.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!--imports jquery-->
+<script>window.jQuery || document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"><\/script>')</script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript" src="js/jquery.tweet.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
+<script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript">
+	$('#slider-cycle').cycle({ 
+		fx:      'growY', // transition type
+		speed:    600, 
+		timeout:  5000,
+		cleartype: false,   //  Fixes the issue with IE6+
+		startingSlide: 0,
+		next: '#cycle-next',
+		prev: '#cycle-prev'
+	});
+</script>
+
+<!--[if IE 7]><link href="css/ie7.css" rel="stylesheet" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="css/dblue.css" media="screen" />
+<script type="text/javascript" src="js/options.js"></script>
+
+</head>
+
+<body>
+
+	<div id="left" class="plates">
+		<ul id="navigation">
+			<li><a class="active" href="#home">Home</a></li>
+      <li><a href="#people">People</a></li>
+      <li><a href="#announce">Announce</a></li>
+      <li><a href="#seminar">Seminar</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#paper">Paper</a></li>
+		</ul>
+		
+    <!--
+    <div id="logo">
+      <h1><a href="#home">&nbsp;</a></h1>
+		</div>
+    <p id="copyright">© Copyright 2012 · All Rights Reserved ITCS@Tsinghua University</a></p>
+    -->
+		
+	</div><!-- end left -->	
+	
+	<div id="right" class="square-grid">
+
+		<div id="home" class="page">
+				<h2>Welcome to ITCS@Tsinghua University</h2>
+				<p class="sub-title">About us</p>
+				<div class="featured cycle">
+					<ul id="slider-cycle">
+						<!-- slide 1 -->
+						<li>
+							<img src="img/slide-1.jpg" alt="image" />
+							<!-- caption text -->
+							<div class="caption">
+								<h3>Pic Title 1</h3>
+								<p>subtitle 1</p>
+							</div><!-- end caption -->
+						</li>
+						<!-- slide 2 -->
+						<li>
+							<img src="img/slide-2.jpg" alt="image" />
+							<!-- caption text -->
+							<div class="caption">
+								<h3>Pic Title 2</h3>
+								<p>subtitle 2</p>
+							</div><!-- end caption -->
+						</li>
+						<!-- slide 3 -->
+						<li>
+							<img src="img/slide-3.jpg" alt="image" />
+							<!-- caption text -->
+							<div class="caption">
+								<h3>Pic Title 3</h3>
+								<p>subtitle 3</p>
+							</div><!-- end caption -->
+						</li>
+					</ul>
+					
+					<ul id="slider-cycle-nav">
+						<li><a id="cycle-prev"></a></li>
+						<li><a id="cycle-next"></a></li>
+					</ul>
+					
+				</div><!-- end featured -->			
+				<div class="separator-line"></div>	
+				<p class="slogan">Slogan Here.</p>	
+			<div class="separator-line"></div>
+		</div>
+
+		<div id="people" class="page">
+			<h2>People</h2>
+			<p class="sub-title">Genius</p>
+			<div class="boxes">
+				<div class="one-third">
+					<div class="box-title">
+						<img class="box-icon" src="img/guang_yang.png" alt="image" />
+						<h3>Guang Yang</h3>
+						<span class="subtitle">PhD</span>
+					</div>
+					<a href="http://itcs.tsinghua.edu.cn/guangyang/">Home Page</a>
+					<p>Interest: Cryptography, Derandomization</p>
+					<p>blah blah this may include HTML links and tags such that <B> mmmfd </B> and <I> fksdfsdfsd </I> etc</p>
+				</div>
+				
+				<div class="one-third">
+					<div class="box-title">
+						<img class="box-icon" src="img/11.png" alt="image" />
+						<h3>Bangsheng Tang</h3>
+						<span class="subtitle">PhD</span>
+					</div>
+					<a href="http://itcs.tsinghua.edu.cn/bangshengtang/">Home Page</a>
+					<p>Interest: Gaming</p>
+					<p>blah blah this may include HTML links and tags such that <B> mmmfd </B> and <I> fksdfsdfsd </I> etc</p>
+				</div>
+				
+				<div class="one-third">
+					<div class="box-title">
+						<img class="box-icon" src="img/22.png" alt="image" />
+						<h3>Shiteng Chen</h3>
+						<span class="subtitle">PhD</span>
+					</div>
+					<a href="http://itcs.tsinghua.edu.cn/shitengchen/">Home Page</a>
+					<p>Interest: Joking</p>
+					<p>blah blah this may include HTML links and tags such that <B> mmmfd </B> and <I> fksdfsdfsd </I> etc</p>
+				</div>
+			<div class="clear"></div>
+			
+			</div><!-- end boxes -->			
+
+      <!--
+			<div class="separator-line"></div>
+			<div class="two-third">
+				<h3>Welcome to Temptation</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit enim, consequat et rhoncus quis, tempus ac elit.</p> 
+				<p>Donec vel sem nibh, eu aliquet leo. Praesent dapibus, massa euismod tempus scelerisque, ipsum tellus faucibus arcu, quis convallis diam justo vel lorem. </p> 					
+			</div>				
+			<div class="one-third last">
+				<h3>Twitter Feed</h3>
+				<div id="twitter-feed"></div>					
+			</div>
+      <div class="clear"></div>
+      -->
+			
+		</div><!-- end home page -->			
+
+		
+	<!-- ABOUT PAGE -->
+		
+		
+		<div id="announce" class="page">
+			<h2>Announce</h2>	
+			<p class="sub-title">Subtitle</p>
+			<div class="full-width">
+				<h3>News #1</h3>
+				<p>
+					<img class="image-left" src="img/align.jpg" alt="Image description" />Congratulations to Guang Yang for winning the new scientist Tsinghua award!
+				</p>
+				<p> January 1, 2013 </p> 
+			</div>
+			<div class="clear"></div>
+			
+		</div><!-- end about page -->					
+		
+		
+	<!-- PORTFOLIO PAGE -->	
+		<div id="seminar" class="page">
+		
+			<h2>Seminar</h2>
+			<p class="sub-title">Subtitle</p>
+			<div class="full-width">
+				<h3>Seminar #1</h3>
+				<p>blah blah</p>
+				<p>Tuesday January 1, 2013</p>
+				<p>12pm, 1-222 FIT Building</p>
+				<p>
+					<a href="http://some_link_related_to_this_seminar">Reference #1</a>
+					<a href="http://some_other_link_related_to_this_seminar">Reference #2</a>
+				</p> 
+			</div>
+			<div class="clear"></div>				
+			
+		</div><!-- end portfolio page -->
+		
+		
+	<!-- BLOG PAGE -->	
+		<div id="project" class="page">
+			<h2>Project</h2>
+			<p class="sub-title">Subtitle</p>
+			
+			<div class="blog-post">
+				<div class="post-title">
+					<h3>Halloween</h3>
+					<div class="post-metadata">
+						<p>By <i>Guang Yang</i>, super man</p>
+						<p>November 11th, 2012</p>
+						<p style="font-size: 11px">blabla</p>
+					</div><!-- end post-metadata -->											
+				</div><!-- end post-title -->
+				
+			</div><!-- end blog-post -->
+			<div class="separator-line"></div>
+		</div><!-- end blog page -->
+				
+		
+	<!-- CONTACT PAGE -->	
+		<div id="paper" class="page">
+			<h2>Paper</h2>
+			<p class="sub-title">Subtitle</p>
+			
+			<div class="blog-post">
+				<div class="post-title">
+					<h3>Derandomization</h3>
+					<div class="post-metadata">
+						<p>blah blah</p>
+						<p>Eric Allender, Shiteng Chen</p>
+						<p>Conference or Journal name, January 1, 2013</p>
+						<p>Link, BIB</p>
+						<p style="font-size: 11px">blabla</p>
+					</div><!-- end post-metadata -->											
+				</div><!-- end post-title -->
+				
+			</div><!-- end blog-post -->
+			<div class="separator-line"></div>
+		
+		</div><!-- end contact page -->
+
+	</div><!-- end right -->	
+</body>
+
+</html>

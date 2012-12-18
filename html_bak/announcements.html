@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>RC3/IIIS - Tsinghua Univ.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+<script type='text/javascript' src='js/basic.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/dblue.css" media="screen" />
+<link rel='stylesheet' type='text/css' href='css/basic.css' media='screen' />
+
+<!--[if IE 7]>
+<link type="text/css" href="css/ie7.css" rel="stylesheet" media="screen" />
+<![endif]-->
+<!--[if lt IE 7]>
+<link type='text/css' href='css/basic_ie.css' rel='stylesheet' media='screen' />
+<![endif]-->
+  
+<script type="text/javascript">
+  var cur_page = 1;
+  var total_page = 1;
+  $(document).ready(function()
+  {
+    makefoot();
+  });
+
+  function makefoot()
+  {
+    total_page = Math.ceil($('.box-title').size()/10);
+    var str = '';
+    for (var i=1; i<=total_page; i++)
+    { 
+      str += '<a onclick="gotopage('+i+')" style="margin-left: 8px;" href="#">'+i+'</a>';
+    }
+    $('#foot_number').html(str);
+    gotopage(1);
+  }
+
+  function shiftpage(value)
+  {
+    gotopage(value + cur_page);
+  }
+  
+  function gotopage(value)
+  {
+    if (value <= 0)
+      value = 1;
+    if (value > total_page)
+      value = total_page;
+    $('.box-title').hide();
+    $('.box-title').slice(value*10-10, value*10).show();
+    $('#foot_number a').eq(cur_page-1).css('font-weight', 'normal')
+    $('#foot_number a').eq(value-1).css('font-weight', 'bold')
+    cur_page = value;
+  }
+</script>
+    
+</head>
+<body>
+  <div id="left" class="plates">
+    <ul id="navigation">
+      <li><a href="index.html">Home</a></li><li><a href="people.html">People</a></li><li><a class="active"href="announcements.html">Announcements</a></li><li><a href="seminars.html">Seminars</a></li><li><a href="projects.html">Projects</a></li><li><a href="papers.html">Papers/Resources</a></li>
+    </ul>
+  </div><!-- end left --> 
+  
+  <div id="right" class="square-grid">
+    <div id="home" class="page">
+      <div style="min-height: 50px;">
+        <img src="img/logo.png" align="left" style="width: 150px;" alt="ITCS" />
+        <h2>Laboratory For The Study of <font class='red'>R</font>andomness</h2>
+        <br>
+        <h2>in <font class='red'>C</font>omputation and <font class='red'>C</font>ryptographic <font class='red'>C</font>omplexity</h2>
+      </div>
+      <div class="separator-line"></div>  
+      
+      <h3>Announcements</h3>
+      <div class="boxes">
+        <div class="full-width">
+      <div class="box-title" value="0"><h4 class="bg-yellow">3-week seminar on Algorithmic Randomness</h4><p>Starting from the week of December the 4th and for three subsequent weeks Dr Barbalias will be giving a mini-seminar on Algorithmic Information Theory. See "seminars" for details.</p><div class="clear"></div><div class="dashed-line-h"></div></div>
+          <div id='foot' align="center" style="margin-top: 10px;">
+            <a onclick='gotopage(1);' href='#'><img src="img/button/first.png"/></a>
+            <a onclick='shiftpage(-1);' href='#'><img src="img/button/prev.png" style="margin-left: 8px;"/></a>
+            <div id='foot_number' style="display: inline;"></div>
+            <a onclick='shiftpage(1);' href='#'><img src="img/button/next.png" style="margin-left: 8px;"/></a>
+            <a onclick='gotopage(total_page);' href='#'><img src="img/button/last.png" style="margin-left: 8px;"/></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="clear"></div>
+      <div class="separator-line"></div>
+      <img src="img/logo3.png" align="right" style="width: 80px; margin-top: -10px; margin-left: -80px;" alt="ITCS" />
+      <p align="center">Copyright &copy; 2012 IIIS, Tsinghua University. All rights reserved.</a></p>
+    </div><!-- end home page -->
+  </div><!-- end right -->  
+        </body></html>
