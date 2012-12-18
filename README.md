@@ -28,6 +28,7 @@ $ python window.py
 * Use "Up/Down/Top/Bottom" button to reorder items.
 * Use "Save Item" button to save current item to data memmory.
 * Use "Save File" button to save current data to "gui/data.json", while the old one is backup to "gui/data.json.bak".
+* Use "Make HTML" button to generate HTML files from current data to ""html/" directory.
 
 
 ## Data
