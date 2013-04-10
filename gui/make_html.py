@@ -343,7 +343,6 @@ def gen_body_papers(p, data):
     c_n += 1
 
   # Unrefereed
-  index = 0
   c_n = 0
   for t in data['papers']['unrefer']:
     if t == []:
@@ -397,6 +396,7 @@ def gen_body_papers(p, data):
     hstr += '<div class="clear"></div>'
     hstr += '<div class="dashed-line-h"></div>'
     hstr += '</div>'
+    index += 1
 
   # Videos
   c_n = 0
@@ -435,6 +435,7 @@ def gen_body_papers(p, data):
     hstr += '<div class="clear"></div>'
     hstr += '<div class="dashed-line-h"></div>'
     hstr += '</div>'
+    index += 1
 
   # Slides
   c_n = 0
@@ -473,6 +474,7 @@ def gen_body_papers(p, data):
     hstr += '<div class="clear"></div>'
     hstr += '<div class="dashed-line-h"></div>'
     hstr += '</div>'
+    index += 1
 
   hstr += \
       '''
