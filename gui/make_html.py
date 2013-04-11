@@ -331,7 +331,7 @@ def gen_body_papers(p, data):
     hstr += '</div>'
     
     hstr += '<div id="basic-modal-content-bib-%d" class="basic-modal-hide">' % index
-    hstr += '<li style="margin-top: 5px;">Bibtex</li>'
+    # hstr += '<li style="margin-top: 5px;">Bibtex</li>'
     hstr += '<p class="details">%s</p>' % t['bibtex']
     hstr += '</div>'
 
@@ -504,6 +504,12 @@ def gen_header(p):
 <script type='text/javascript' src='js/jquery.js'></script>
 <script type='text/javascript' src='js/jquery.simplemodal.js'></script>
 <script type='text/javascript' src='js/basic.js'></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$']]}
+});
+</script>
+<script type="text/javascript" src="js/MathJax.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/dblue.css" media="screen" />
 <link rel='stylesheet' type='text/css' href='css/basic.css' media='screen' />
